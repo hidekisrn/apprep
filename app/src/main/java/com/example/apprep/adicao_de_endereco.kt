@@ -1,7 +1,10 @@
 package com.example.apprep
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_adicao_de_endereco.*
 
 class adicao_de_endereco : AppCompatActivity() {
@@ -34,6 +37,9 @@ class adicao_de_endereco : AppCompatActivity() {
                 editTextBairro.setError("Campo obrigatorio")
                 return@setOnClickListener
             }
+
+            val intent = Intent(this, adicao_de_caracteristica::class.java)
+            startActivity(intent)
         }
     }
 }

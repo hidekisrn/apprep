@@ -35,6 +35,11 @@ class adicao_de_foto_activity : AppCompatActivity() {
             }
         }
 
+        buttonProximoFoto.setOnClickListener {
+            val intent = Intent(this, adicao_de_disponibilidade::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun pickImageFromGallery() { //Metodo para pegar a imagem da galera

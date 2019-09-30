@@ -1,5 +1,6 @@
 package com.example.apprep
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -20,6 +21,7 @@ class adicao_de_caracteristica : AppCompatActivity() {
         setContentView(R.layout.activity_adicao_de_caracteristica)
 
         buttonDecrementarAcomodacao.setOnClickListener {
+            if(counterAcomodacao > 0)
             counterAcomodacao--
             acomodacaoCounter.setText(counterAcomodacao.toString())
         }
@@ -30,6 +32,7 @@ class adicao_de_caracteristica : AppCompatActivity() {
         }
 
         buttonDecrementarBanheiro.setOnClickListener {
+            if(counterBanheiro > 0)
             counterBanheiro--
             banheiroCounter.setText(counterBanheiro.toString())
         }
@@ -40,6 +43,7 @@ class adicao_de_caracteristica : AppCompatActivity() {
         }
 
         buttonDecrementarCarro.setOnClickListener {
+            if(counterCarro > 0)
             counterCarro --
             carroCounter.setText(counterBanheiro.toString())
         }
@@ -67,6 +71,9 @@ class adicao_de_caracteristica : AppCompatActivity() {
                 editTextDescricaoAcomodacao.setError("Campo obrigatório")
                 return@setOnClickListener
             }
+
+            val intent = Intent(this, adicao_de_foto_activity::class.java)
+            startActivity(intent)
         }
     }
 }
