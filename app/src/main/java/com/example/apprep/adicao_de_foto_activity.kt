@@ -40,6 +40,10 @@ class adicao_de_foto_activity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        buttonVoltarFoto.setOnClickListener {
+            val intent = Intent(this, adicao_de_caracteristica::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun pickImageFromGallery() { //Metodo para pegar a imagem da galera

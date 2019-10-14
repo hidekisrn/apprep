@@ -75,5 +75,10 @@ class adicao_de_caracteristica : AppCompatActivity() {
             val intent = Intent(this, adicao_de_foto_activity::class.java)
             startActivity(intent)
         }
+
+        buttonVoltarCaracteristica.setOnClickListener {
+            val intent = Intent(this, adicao_de_endereco::class.java)
+            startActivity(intent)
+        }
     }
 }

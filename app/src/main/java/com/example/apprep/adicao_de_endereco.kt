@@ -41,5 +41,10 @@ class adicao_de_endereco : AppCompatActivity() {
             val intent = Intent(this, adicao_de_caracteristica::class.java)
             startActivity(intent)
         }
+
+        buttonVoltarEndereco.setOnClickListener {
+            val intent = Intent(this, perfil::class.java)
+            startActivity(intent)
+        }
     }
 }

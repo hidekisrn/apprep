@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".adicao_de_disponibilidade">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/squarebox"
+            android:layout_marginTop="2dp">
+            <Button
+                android:id="@+id/buttonVoltarDisponibilidade"
+                android:background="@drawable/back_24px"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="2dp"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:text="Disponibilidade" />
+        </RelativeLayout>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Escolha a data de início da sua reserva:"/>
+
+
+        <TextView
+            android:id="@+id/dataInicioDisponibilidade"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/squarebox"
+            android:gravity="center"
+            android:text=" Data "
+            android:textSize="20sp" />
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Escolha a data de término da sua reserva:"/>
+
+
+        <TextView
+            android:id="@+id/dataTerminoDisponibilidade"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/squarebox"
+            android:gravity="center"
+            android:text=" Clique para definir a data "
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttonFinalizar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "24dp"
+            android:layout_marginLeft = "110dp"
+            android:layout_marginRight = "110dp"
+            android:gravity="center"
+            android:text="Finalizar" />
+
+    </LinearLayout>
+
+</ScrollView>

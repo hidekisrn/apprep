@@ -20,7 +20,7 @@
             android:layout_marginTop="2dp">
 
             <Button
-                android:id="@+id/buttonVoltarEndereco"
+                android:id="@+id/buttonVoltarFoto"
                 android:background="@drawable/back_24px"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
