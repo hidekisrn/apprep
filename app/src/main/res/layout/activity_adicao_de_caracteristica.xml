@@ -14,9 +14,9 @@
         android:paddingBottom="16dp">
 
         <RelativeLayout
+            android:background="@drawable/squarebox"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/squarebox"
             android:layout_marginTop="2dp">
             <Button
                 android:id="@+id/buttonVoltarCaracteristica"
