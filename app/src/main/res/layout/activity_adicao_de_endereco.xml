@@ -38,7 +38,6 @@
             android:id="@+id/editTextCEP"
             android:background="@drawable/squarebox"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_width="fill_parent"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
@@ -46,7 +45,9 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="CEP" />
+            android:hint="CEP"
+            android:maxLines="1"
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/editTextRua"
@@ -73,7 +74,9 @@
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Número da residência" />
+            android:hint="Número da residência"
+            android:maxLines="1"
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/editTextBairro"
