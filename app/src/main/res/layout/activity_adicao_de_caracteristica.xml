@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AdicaoCaracteristicaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/squarebox"
+            android:layout_marginTop="2dp">
+            <Button
+                android:id="@+id/buttonVoltarEndereco"
+                android:background="@drawable/back_24px"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="2dp"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:text="Dados da residência" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/editTextNomedaRepublica"
+            android:background="@drawable/squarebox"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft = "16dp"
+            android:layout_marginRight = "16dp"
+            android:layout_marginTop="16dp"
+            android:padding="5dp"
+            android:imeOptions="actionNext"
+            android:drawablePadding="5dp"
+            android:hint="Nome da república"
+            android:inputType="textCapWords" />
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Quantidade de acomodações aceita"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "16dp"
+            android:layout_marginRight = "16dp">
+
+            <Button
+                android:id="@+id/buttonDecrementarAcomodacao"
+                android:background="@drawable/ic_exposure_neg_1_24px"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/acomodacaoCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/buttonIncrementarAcomodacao"
+                android:background="@drawable/ic_exposure_plus_1_24px"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Quantidade de banheiros disponíveis"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "16dp"
+            android:layout_marginRight = "16dp">
+
+            <Button
+                android:id="@+id/buttonDecrementarBanheiro"
+                android:background="@drawable/ic_exposure_neg_1_24px"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:id="@+id/banheiroCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/buttonIncrementarBanheiro"
+                android:background="@drawable/ic_exposure_plus_1_24px"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Quantidade de vagas para carro"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "16dp"
+            android:layout_marginRight = "16dp" >
+
+            <Button
+                android:id="@+id/buttonDecrementarCarro"
+                android:background="@drawable/ic_exposure_neg_1_24px"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:id="@+id/carroCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/buttonIncrementarCarro"
+                android:background="@drawable/ic_exposure_plus_1_24px"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Preço da Acomodação"/>
+
+        <EditText
+            android:id="@+id/editTextPreco"
+            android:background="@drawable/squarebox"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft = "16dp"
+            android:layout_marginRight = "16dp"
+            android:layout_marginTop="1dp"
+            android:padding="5dp"
+            android:imeOptions="actionNext"
+            android:drawablePadding="5dp"
+            android:hint="R$49,90/pernoite" />
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Descrição da acomodação"/>
+
+        <EditText
+            android:id="@+id/editTextDescricaoAcomodacao"
+            android:background="@drawable/squarebox"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft = "16dp"
+            android:layout_marginRight = "16dp"
+            android:layout_marginTop="1dp"
+            android:padding="5dp"
+            android:imeOptions="actionNext"
+            android:drawablePadding="5dp"
+            android:hint="Descreva a sua acomodação"
+            android:inputType="textCapWords" />
+
+        <Button
+            android:id="@+id/buttonProximoCaracteristica"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "24dp"
+            android:layout_marginLeft = "110dp"
+            android:layout_marginRight = "110dp"
+            android:gravity="center"
+            android:text="Próximo" />
+
+    </LinearLayout>
+
+</ScrollView>

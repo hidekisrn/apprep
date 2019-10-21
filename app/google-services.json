@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "979573911311",
+    "firebase_url": "https://apprep-62520.firebaseio.com",
+    "project_id": "apprep-62520",
+    "storage_bucket": "apprep-62520.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979573911311:android:32df47d6656db31769987a",
+        "android_client_info": {
+          "package_name": "com.example.apprep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979573911311-v91bf336nlfsdcguicf5v07380goph7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTWMhMcN06v9o4ga3RXM5_hJTHMbk8-K0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979573911311-v91bf336nlfsdcguicf5v07380goph7k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
