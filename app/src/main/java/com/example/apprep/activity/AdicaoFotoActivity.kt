@@ -44,7 +44,6 @@ class AdicaoFotoActivity : AppCompatActivity() {
 
         buttonProximoFoto.setOnClickListener {
             val novaRepublica: Republica = intent.getSerializableExtra("novaRepublica1") as Republica
-            novaRepublica.foto_capa = fotoCapa
             val abreLista = Intent(this, ListaRepublicasActivity::class.java)
                 abreLista.putExtra("novaRepublica2", novaRepublica)
                 startActivity(abreLista)

@@ -12,8 +12,7 @@ import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
 
 
 class ListaRepublicasActivity : AppCompatActivity (){
-    val repTest = Republica("mao de onze", "episcopal","147854589","centro", "4785" )
-    val listaRepublica: MutableList<Republica> = mutableListOf(repTest)
+    val listaRepublica: MutableList<Republica> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_republicas)

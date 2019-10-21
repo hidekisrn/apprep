@@ -46,7 +46,7 @@ class CadastroEnderecoActivity : AppCompatActivity() {
                     editTextBairro.text.toString())
 */
             val republica = Republica("",editTextRua.text.toString(), editTextCEP.text.toString(),
-                editTextBairro.text. toString(), editTextNumeroResidencia.text.toString(),null)
+                editTextBairro.text. toString(), editTextNumeroResidencia.text.toString())
 
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
             intent.putExtra("novaRepublica", republica)
