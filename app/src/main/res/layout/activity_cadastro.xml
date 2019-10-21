@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cadastro">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/squarebox"
+                android:layout_marginTop="2dp">
+                <Button
+                    android:id="@+id/buttonVoltarCadastro"
+                    android:background="@drawable/back_24px"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="35dp"
+                    android:text="Cadastro" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/editTextNome"
+                android:background="@drawable/squarebox"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_marginLeft = "16dp"
+                android:layout_marginRight = "16dp"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:imeOptions="actionNext"
+                android:drawablePadding="5dp"
+                android:hint="Nome"
+                android:maxLines="1"
+                android:inputType="textCapWords"/>
+
+            <EditText
+                android:id="@+id/editTextSobrenome"
+                android:background="@drawable/squarebox"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_marginLeft = "16dp"
+                android:layout_marginRight = "16dp"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:imeOptions="actionNext"
+                android:drawablePadding="5dp"
+                android:hint="Sobrenome"
+                android:maxLines="1"
+                android:inputType="textCapWords"/>
+
+            <EditText
+                android:id="@+id/editTextTelefone"
+                android:background="@drawable/squarebox"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_marginLeft = "16dp"
+                android:layout_marginRight = "16dp"
+                android:layout_marginTop="16dp"
+                android:padding="5dp"
+                android:imeOptions="actionNext"
+                android:drawablePadding="5dp"
+                android:hint="Telefone"
+                android:maxLines="1"
+                android:inputType="number"/>
+
+            <EditText
+                android:id="@+id/editTextCPF"
+                android:background="@drawable/squarebox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "16dp"
+                android:layout_marginRight = "16dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:imeOptions="actionNext"
+                android:hint="CPF"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:background="@drawable/squarebox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "16dp"
+                android:layout_marginRight = "16dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:imeOptions="actionNext"
+                android:hint="Email"
+                android:maxLines="1"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/editTextSenha"
+                android:background="@drawable/squarebox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "16dp"
+                android:layout_marginRight = "16dp"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:imeOptions="actionNext"
+                android:hint="Senha"
+                android:maxLines="1"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/buttonFinalizarCadastro"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "24dp"
+                android:layout_marginLeft = "110dp"
+                android:layout_marginRight = "110dp"
+                android:gravity="center"
+                android:text="Finalizar Cadastro" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,7 +47,7 @@
             android:drawablePadding="5dp"
             android:hint="CEP"
             android:maxLines="1"
-            android:inputType="text"/>
+            android:inputType="number"/>
 
         <EditText
             android:id="@+id/editTextRua"
@@ -76,7 +76,7 @@
             android:imeOptions="actionNext"
             android:hint="Número da residência"
             android:maxLines="1"
-            android:inputType="text"/>
+            android:inputType="number"/>
 
         <EditText
             android:id="@+id/editTextBairro"
