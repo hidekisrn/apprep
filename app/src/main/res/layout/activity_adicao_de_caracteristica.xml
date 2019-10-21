@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".adicao_de_caracteristica">
+    tools:context=".activity.AdicaoCaracteristicaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,12 +14,12 @@
         android:paddingBottom="16dp">
 
         <RelativeLayout
-            android:background="@drawable/squarebox"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:background="@drawable/squarebox"
             android:layout_marginTop="2dp">
             <Button
-                android:id="@+id/buttonVoltarCaracteristica"
+                android:id="@+id/buttonVoltarEndereco"
                 android:background="@drawable/back_24px"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
