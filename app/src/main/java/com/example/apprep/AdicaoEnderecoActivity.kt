@@ -3,11 +3,9 @@ package com.example.apprep
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_adicao_de_endereco.*
 
-class adicao_de_endereco : AppCompatActivity() {
+class AdicaoEnderecoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +36,11 @@ class adicao_de_endereco : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val intent = Intent(this, adicao_de_caracteristica::class.java)
+            val republica = Republica("",editTextRua.text.toString(), editTextCEP.text.toString(),
+                editTextBairro.text. toString(), editTextNumeroResidencia.text.toString())
+
+            val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
+            intent.putExtra("novaRepublica", republica)
             startActivity(intent)
         }
 

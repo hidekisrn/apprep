@@ -3,13 +3,10 @@ package com.example.apprep
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import android.view.View;
-import android.widget.Button;
 import kotlinx.android.synthetic.main.activity_adicao_de_caracteristica.*
 
 
-class adicao_de_caracteristica : AppCompatActivity() {
+class AdicaoCaracteristicaActivity : AppCompatActivity() {
 
     var counterAcomodacao = 0
     var counterBanheiro = 0
@@ -21,8 +18,8 @@ class adicao_de_caracteristica : AppCompatActivity() {
         setContentView(R.layout.activity_adicao_de_caracteristica)
 
         buttonDecrementarAcomodacao.setOnClickListener {
-            if(counterAcomodacao > 0)
-            counterAcomodacao--
+            if (counterAcomodacao > 0)
+                counterAcomodacao--
             acomodacaoCounter.setText(counterAcomodacao.toString())
         }
 
@@ -32,8 +29,8 @@ class adicao_de_caracteristica : AppCompatActivity() {
         }
 
         buttonDecrementarBanheiro.setOnClickListener {
-            if(counterBanheiro > 0)
-            counterBanheiro--
+            if (counterBanheiro > 0)
+                counterBanheiro--
             banheiroCounter.setText(counterBanheiro.toString())
         }
 
@@ -43,8 +40,8 @@ class adicao_de_caracteristica : AppCompatActivity() {
         }
 
         buttonDecrementarCarro.setOnClickListener {
-            if(counterCarro > 0)
-            counterCarro --
+            if (counterCarro > 0)
+                counterCarro--
             carroCounter.setText(counterBanheiro.toString())
         }
 
@@ -54,31 +51,37 @@ class adicao_de_caracteristica : AppCompatActivity() {
         }
 
         buttonProximoCaracteristica.setOnClickListener {
-            if(editTextNomedaRepublica.text.toString().isEmpty()){
+            if (editTextNomedaRepublica.text.toString().isEmpty()) {
                 editTextNomedaRepublica.requestFocus()
                 editTextNomedaRepublica.setError("Campo obrigatório")
                 return@setOnClickListener
             }
 
-            if(editTextPreco.text.toString().isEmpty()){
+            if (editTextPreco.text.toString().isEmpty()) {
                 editTextPreco.requestFocus()
                 editTextPreco.setError("Campo obrigatório")
                 return@setOnClickListener
             }
 
-            if(editTextDescricaoAcomodacao.text.toString().isEmpty()){
+            if (editTextDescricaoAcomodacao.text.toString().isEmpty()) {
                 editTextDescricaoAcomodacao.requestFocus()
                 editTextDescricaoAcomodacao.setError("Campo obrigatório")
                 return@setOnClickListener
             }
 
-            val intent = Intent(this, adicao_de_foto_activity::class.java)
-            startActivity(intent)
-        }
+            val novaRepublica: Republica? =
+                intent.getSerializableExtra("novaRepublica") as Republica
+            if (novaRepublica != null) {
+                novaRepublica.nome = editTextNomedaRepublica.text.toString()
+                val intent = Intent(this, AdicaoFotoActivity::class.java)
+                intent.putExtra("novaRepublica1", novaRepublica)
+                startActivity(intent)
+            }
 
-        buttonVoltarCaracteristica.setOnClickListener {
-            val intent = Intent(this, adicao_de_endereco::class.java)
-            startActivity(intent)
+            buttonVoltarCaracteristica.setOnClickListener {
+                val intent = Intent(this, AdicaoEnderecoActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

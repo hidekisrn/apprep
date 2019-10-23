@@ -9,7 +9,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-class adicao_de_disponibilidade : AppCompatActivity() {
+class AdicaoDisponibilidadeActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,7 @@ class adicao_de_disponibilidade : AppCompatActivity() {
         }
 
         buttonVoltarDisponibilidade.setOnClickListener {
-            val intent = Intent(this, adicao_de_foto_activity::class.java)
+            val intent = Intent(this, AdicaoFotoActivity::class.java)
             startActivity(intent)
         }
     }
