@@ -1,6 +1,7 @@
 package com.example.apprep
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,7 +31,7 @@ class RepublicaAdapter(val context: Context, val republicas: List<Republica>) :
                 republica.rua + ", " + republica.num_residencia + " - " + republica.bairro + ", São Carlos - SP, " + republica.cep
             itemView.tvNome.text = republica.nome
             itemView.tvEndereço.text = endereco
-
+            if (republica.foto != null) itemView.imgFoto.setImageURI(Uri.parse(republica.foto))
         }
     }
 }

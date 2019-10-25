@@ -12,9 +12,13 @@ import kotlinx.android.synthetic.main.activity_adicao_de_foto.*
 
 class AdicaoFotoActivity : AppCompatActivity() {
 
+    lateinit var novaRepublica: Republica
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_foto)
+
+        novaRepublica = intent.getSerializableExtra("novaRepublica1") as Republica
 
         buttonAdicionarCapa.setOnClickListener {
             if (VERSION.SDK_INT >= VERSION_CODES.M){
@@ -35,7 +39,6 @@ class AdicaoFotoActivity : AppCompatActivity() {
         }
 
         buttonProximoFoto.setOnClickListener {
-            val novaRepublica: Republica = intent.getSerializableExtra("novaRepublica1") as Republica
             val abreLista = Intent(this, ListaRepublicasActivity::class.java)
             abreLista.putExtra("novaRepublica2", novaRepublica)
             startActivity(abreLista)
@@ -81,6 +84,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             fotoCapa.setImageURI(data?.data)
+            novaRepublica.foto = data?.data.toString()
         }
     }
 }
