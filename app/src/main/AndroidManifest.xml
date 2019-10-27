@@ -23,19 +23,20 @@
         </activity>
 
         <activity android:name=".cadastro"></activity>
-        <activity android:name=".login">
+        <activity android:name=".login"/>
+        <activity android:name=".perfil">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+           </intent-filter>
         </activity>
-        <activity android:name=".perfil"/>
-        <activity android:name=".adicao_de_disponibilidade" />
-        <activity android:name=".adicao_de_foto_activity" />
-        <activity android:name=".adicao_de_caracteristica" />
-        <activity android:name=".adicao_de_endereco" />
+        <activity android:name=".AdicaoDisponibilidadeActivity" />
+        <activity android:name=".AdicaoFotoActivity" />
+        <activity android:name=".AdicaoCaracteristicaActivity" />
+        <activity android:name=".AdicaoEnderecoActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".ListaRepublicasActivity"/>
     </application>
 
 </manifest>

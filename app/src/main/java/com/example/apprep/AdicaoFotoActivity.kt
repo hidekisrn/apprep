@@ -7,11 +7,10 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Build.*
 import kotlinx.android.synthetic.main.activity_adicao_de_foto.*
 
-class adicao_de_foto_activity : AppCompatActivity() {
+class AdicaoFotoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +35,14 @@ class adicao_de_foto_activity : AppCompatActivity() {
         }
 
         buttonProximoFoto.setOnClickListener {
-            val intent = Intent(this, adicao_de_disponibilidade::class.java)
-            startActivity(intent)
+            val novaRepublica: Republica = intent.getSerializableExtra("novaRepublica1") as Republica
+            val abreLista = Intent(this, ListaRepublicasActivity::class.java)
+            abreLista.putExtra("novaRepublica2", novaRepublica)
+            startActivity(abreLista)
         }
 
         buttonVoltarFoto.setOnClickListener {
-            val intent = Intent(this, adicao_de_caracteristica::class.java)
+            val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
             startActivity(intent)
         }
     }
