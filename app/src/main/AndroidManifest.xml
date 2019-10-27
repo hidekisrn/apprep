@@ -23,14 +23,14 @@
         </activity>
 
         <activity android:name=".cadastro"></activity>
-        <activity android:name=".login"/>
-        <activity android:name=".perfil">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".login">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-           </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+        <activity android:name=".perfil"/>
         <activity android:name=".AdicaoDisponibilidadeActivity" />
         <activity android:name=".AdicaoFotoActivity" />
         <activity android:name=".AdicaoCaracteristicaActivity" />
