@@ -14,15 +14,15 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:background="#FFC4001D"
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="57dp"
+            android:background="#FFC4001D">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="AppRep (teste de cores)"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:text="AppRep (teste de cores)" />
 
         </RelativeLayout>
 

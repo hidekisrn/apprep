@@ -69,17 +69,22 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+
             val novaRepublica: Republica? =
                 intent.getSerializableExtra("novaRepublica") as Republica
             if (novaRepublica != null) {
                 novaRepublica.nome = editTextNomedaRepublica.text.toString()
+                novaRepublica.banheiros = counterBanheiro.toString()
+                novaRepublica.preco = editTextPreco.text.toString()
+                novaRepublica.vagas = counterAcomodacao.toString()
+                novaRepublica.vagasCarro = counterCarro.toString()
                 val intent = Intent(this, AdicaoFotoActivity::class.java)
-                intent.putExtra("novaRepublica1", novaRepublica)
+                intent.putExtra("novaRepublica", novaRepublica)
                 startActivity(intent)
             }
 
             buttonVoltarCaracteristica.setOnClickListener {
-                val intent = Intent(this, AdicaoEnderecoActivity::class.java)
+                val intent = Intent(this, CadastraEnderecoActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -37,7 +37,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
         buttonProximoFoto.setOnClickListener {
             val novaRepublica: Republica = intent.getSerializableExtra("novaRepublica1") as Republica
             val abreLista = Intent(this, ListaRepublicasActivity::class.java)
-            abreLista.putExtra("novaRepublica2", novaRepublica)
+            abreLista.putExtra("novaRepublica", novaRepublica)
             startActivity(abreLista)
         }
 
@@ -79,8 +79,13 @@ class AdicaoFotoActivity : AppCompatActivity() {
 
     //handle result of picked image
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val novaRepublica: Republica = intent.getSerializableExtra("novaRepublica") as Republica
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             fotoCapa.setImageURI(data?.data)
+            novaRepublica.foto = data?.data.toString()
+            val intent = Intent(this, AdicaoFotoActivity::class.java)
+            intent.putExtra("novaRepublica1", novaRepublica)
+            startActivity(intent)
         }
     }
 }
