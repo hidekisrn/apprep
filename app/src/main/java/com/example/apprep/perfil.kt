@@ -12,7 +12,7 @@ class perfil : AppCompatActivity() {
         setContentView(R.layout.activity_perfil)
 
         adicionarRepublica.setOnClickListener {
-            val intent = Intent(this, AdicaoEnderecoActivity::class.java)
+            val intent = Intent(this, CadastraEnderecoActivity::class.java)
             startActivity(intent)
         }
     }
