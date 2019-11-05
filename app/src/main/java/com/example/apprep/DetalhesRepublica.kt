@@ -1,5 +1,6 @@
 package com.example.apprep
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,12 @@ class DetalhesRepublica : AppCompatActivity() {
         val republica: Republica? = intent.getSerializableExtra("novaRepublica") as Republica?
         if(republica != null)
             carregaDados(republica)
+
+        buttonReservarRep.setOnClickListener{
+            val intent = Intent(this, ReservaDeVagaActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun carregaDados(republica: Republica) {
@@ -22,21 +29,28 @@ class DetalhesRepublica : AppCompatActivity() {
         val preco: String =
             "R$" + republica.preco + " pernoite"
         val vagas: String? =
-            republica.vagas + " vagas disponíveis"
+            "Vagas disponíveis: " + republica.vagas
         val vagasCarro: String? =
-            republica.vagasCarro + " vagas para carro"
+            "Vagas para carro: " + republica.vagasCarro
         val banheiro: String? =
-            republica.banheiros + " banheiros"
+            "Banheiros: " + republica.banheiros
+        val detalhes: String? =
+            "Detalhes: \n" + republica.descricao
         dtNomeRep.setText(republica.nome)
         dtEndereco.setText(endereco)
         dtBanheiros.setText(banheiro)
         dtPreco.setText(preco)
         dtVagas.setText(vagas)
         dtVagasCarro.setText(vagasCarro)
+        dtDetalhes.setText(detalhes)
         if(republica.foto != null)
             imgFotoCapa.setImageURI(Uri.parse(republica.foto))
-
     }
 
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, DetalhesRepublica::class.java)
+        startActivity(intent)
+        finish()
+    }
 }

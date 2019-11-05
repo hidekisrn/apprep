@@ -78,15 +78,25 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
                 novaRepublica.preco = editTextPreco.text.toString()
                 novaRepublica.vagas = counterAcomodacao.toString()
                 novaRepublica.vagasCarro = counterCarro.toString()
+                novaRepublica.descricao = editTextDescricaoAcomodacao.text.toString()
                 val intent = Intent(this, AdicaoFotoActivity::class.java)
                 intent.putExtra("novaRepublica", novaRepublica)
                 startActivity(intent)
-            }
-
-            buttonVoltarCaracteristica.setOnClickListener {
-                val intent = Intent(this, CadastraEnderecoActivity::class.java)
-                startActivity(intent)
+                finish()
             }
         }
+
+        buttonVoltarCaracteristica.setOnClickListener {
+            val intent = Intent(this, CadastraEnderecoActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, CadastraEnderecoActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

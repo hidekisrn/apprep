@@ -11,10 +11,11 @@ import java.util.*
 
 class AdicaoDisponibilidadeActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_disponibilidade)
+
+        val novaRepublica: Republica? = intent.getSerializableExtra("novaRepublica") as Republica
 
         val calendario = Calendar.getInstance()
         val ano = calendario.get(Calendar.YEAR)
@@ -43,13 +44,23 @@ class AdicaoDisponibilidadeActivity : AppCompatActivity() {
         }
 
         buttonFinalizar.setOnClickListener {
-            val intent = Intent(this, perfil::class.java)
+            val intent = Intent(this, ListaRepublicasActivity::class.java)
+            intent.putExtra("novaRepublica", novaRepublica)
             startActivity(intent)
+            finish()
         }
 
         buttonVoltarDisponibilidade.setOnClickListener {
             val intent = Intent(this, AdicaoFotoActivity::class.java)
             startActivity(intent)
+            finish()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, AdicaoFotoActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

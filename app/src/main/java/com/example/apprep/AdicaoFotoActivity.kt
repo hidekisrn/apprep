@@ -12,9 +12,13 @@ import kotlinx.android.synthetic.main.activity_adicao_de_foto.*
 
 class AdicaoFotoActivity : AppCompatActivity() {
 
+    lateinit var novaRepublica: Republica
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_foto)
+
+        novaRepublica = intent.getSerializableExtra("novaRepublica") as Republica
 
         buttonAdicionarCapa.setOnClickListener {
             if (VERSION.SDK_INT >= VERSION_CODES.M){
@@ -35,16 +39,24 @@ class AdicaoFotoActivity : AppCompatActivity() {
         }
 
         buttonProximoFoto.setOnClickListener {
-            val novaRepublica: Republica = intent.getSerializableExtra("novaRepublica1") as Republica
-            val abreLista = Intent(this, ListaRepublicasActivity::class.java)
+            val abreLista = Intent(this, AdicaoDisponibilidadeActivity::class.java)
             abreLista.putExtra("novaRepublica", novaRepublica)
             startActivity(abreLista)
+            finish()
         }
 
         buttonVoltarFoto.setOnClickListener {
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
             startActivity(intent)
+            finish()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun pickImageFromGallery() { //Metodo para pegar a imagem da galera
@@ -79,13 +91,9 @@ class AdicaoFotoActivity : AppCompatActivity() {
 
     //handle result of picked image
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val novaRepublica: Republica = intent.getSerializableExtra("novaRepublica") as Republica
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             fotoCapa.setImageURI(data?.data)
             novaRepublica.foto = data?.data.toString()
-            val intent = Intent(this, AdicaoFotoActivity::class.java)
-            intent.putExtra("novaRepublica1", novaRepublica)
-            startActivity(intent)
         }
     }
 }
