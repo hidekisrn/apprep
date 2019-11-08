@@ -8,6 +8,7 @@
         android:maxSdkVersion="18" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,7 +23,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
@@ -35,23 +36,22 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".cadastro"></activity>
+        <activity android:name=".CadastroActivity" />
         <activity android:name=".login">
         </activity>
-        <activity android:name=".perfil">
-
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+        <activity android:name=".PerfilActivity"/>
         <activity android:name=".AdicaoDisponibilidadeActivity" />
         <activity android:name=".AdicaoFotoActivity" />
         <activity android:name=".AdicaoCaracteristicaActivity" />
         <activity android:name=".CadastraEnderecoActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ListaRepublicasActivity"/>
+        <activity android:name=".ListaRepublicasActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".DetalhesRepublica"/>
         <activity android:name=".ReservaDeVagaActivity"/>
     </application>

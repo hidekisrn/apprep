@@ -5,17 +5,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_adicao_de_caracteristica.*
 
-
+// PASSO 2
 class AdicaoCaracteristicaActivity : AppCompatActivity() {
 
     var counterAcomodacao = 0
     var counterBanheiro = 0
     var counterCarro = 0
 
+    lateinit var republica: Republica
+
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_caracteristica)
+
+        republica = intent.getSerializableExtra(REPUBLICA) as Republica
+        //TODO: preencher campos com as informações que constam no objeto, por exemplo:
+        acomodacaoCounter.setText(republica.vagas ?: "0")
+        //.... outros campos
 
         buttonDecrementarAcomodacao.setOnClickListener {
             if (counterAcomodacao > 0)
@@ -69,25 +76,17 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-
-            val novaRepublica: Republica? =
-                intent.getSerializableExtra("novaRepublica") as Republica
-            if (novaRepublica != null) {
-                novaRepublica.nome = editTextNomedaRepublica.text.toString()
-                novaRepublica.banheiros = counterBanheiro.toString()
-                novaRepublica.preco = editTextPreco.text.toString()
-                novaRepublica.vagas = counterAcomodacao.toString()
-                novaRepublica.vagasCarro = counterCarro.toString()
-                novaRepublica.descricao = editTextDescricaoAcomodacao.text.toString()
-                val intent = Intent(this, AdicaoFotoActivity::class.java)
-                intent.putExtra("novaRepublica", novaRepublica)
-                startActivity(intent)
-                finish()
-            }
+            pegaNovosValores()
+            val intent = Intent(this, AdicaoFotoActivity::class.java)
+            intent.putExtra(REPUBLICA, republica)
+            startActivity(intent)
+            finish()
         }
 
         buttonVoltarCaracteristica.setOnClickListener {
+            pegaNovosValores()
             val intent = Intent(this, CadastraEnderecoActivity::class.java)
+            intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
             finish()
         }
@@ -95,8 +94,19 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
+        pegaNovosValores()
         val intent = Intent(this, CadastraEnderecoActivity::class.java)
+        intent.putExtra(REPUBLICA, republica)
         startActivity(intent)
         finish()
+    }
+
+    private fun pegaNovosValores() {
+        republica.nome = editTextNomedaRepublica.text.toString()
+        republica.banheiros = counterBanheiro.toString()
+        republica.preco = editTextPreco.text.toString()
+        republica.vagas = counterAcomodacao.toString()
+        republica.vagasCarro = counterCarro.toString()
+        republica.descricao = editTextDescricaoAcomodacao.text.toString()
     }
 }

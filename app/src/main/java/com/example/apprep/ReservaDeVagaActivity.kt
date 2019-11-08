@@ -39,7 +39,7 @@ class ReservaDeVagaActivity : AppCompatActivity() {
             val novaReserva = Reserva(editTextDataChegada.text.toString(), editTextHorarioChegada.text.toString(),
                 editTextDataSaida.text.toString(), editTextPrecoTotal.text.toString())
 
-            val intent = Intent(this, perfil::class.java)
+            val intent = Intent(this, PerfilActivity::class.java)
             intent.putExtra("novaReserva", novaReserva)
             startActivity(intent)
             finish()
