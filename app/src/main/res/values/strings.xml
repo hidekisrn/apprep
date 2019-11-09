@@ -2,5 +2,6 @@
     <string name="app_name">apprep</string>
     <string name="facebook_app_id">557685411652426</string>
     <string name="fb_login_protocol_scheme">fb557685411652426</string>
+    <string name="adicionar_republica">Adicionar republica</string>
 
 </resources>

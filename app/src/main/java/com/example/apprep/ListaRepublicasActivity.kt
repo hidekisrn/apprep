@@ -8,40 +8,43 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.apprep.R
 import com.example.apprep.Republica
 import com.example.apprep.RepublicaAdapter
+import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
 
 
 class ListaRepublicasActivity : AppCompatActivity() {
 
-    val listaRepublica: MutableList<Republica> = mutableListOf()
+    var listaRepublica: List<Republica>? = null
+    set(value) {
+        field = value
+        setAdapter(value)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_republicas)
 
-        val novaRepublica: Republica? = intent.getSerializableExtra("novaRepublica") as Republica
-        if (novaRepublica != null) {
-            listaRepublica.add(novaRepublica)
+        adicionarRepublica.setOnClickListener {
+            val intent = Intent(this, CadastraEnderecoActivity::class.java)
+            startActivity(intent)
         }
+    }
 
+    override fun onResume() {
+        super.onResume()
+        listaRepublica = Paper.book().read(LISTA_REPUBLICAS) // Paper é uma lib para armazenar dados no dispositivo
+    }
 
-        val adapter = RepublicaAdapter(this, listaRepublica)
+    private fun setAdapter(list: List<Republica>?) {
+        val adapter = RepublicaAdapter(this, listaRepublica ?: listOf())
         adapter.configuraClique {
             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
             detalhesRepublica.putExtra("novaRepublica", it)
             this.startActivity(detalhesRepublica)
-
         }
-        val layoutManager = LinearLayoutManager(this)
 
         rvRepublicas.adapter = adapter
-        rvRepublicas.layoutManager = layoutManager
+        rvRepublicas.layoutManager = LinearLayoutManager(this)
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val intent = Intent(this, AdicaoDisponibilidadeActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
 }

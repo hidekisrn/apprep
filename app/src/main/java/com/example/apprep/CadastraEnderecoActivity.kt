@@ -5,11 +5,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_adicao_de_endereco.*
 
+// PASSO 1
 class CadastraEnderecoActivity : AppCompatActivity() {
+
+    var republica: Republica? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_endereco)
+
+        // caso o usuário volte para o passo 1 ele vai receber o usuário com dados preenchidos
+        republica = intent.getSerializableExtra(REPUBLICA) as Republica?
+        republica?.let {
+            //TODO: preencher campos com as informações que constam no objeto, por exemplo:
+            editTextCEP.setText(it.cep ?: "")
+            //.... outros campos
+        }
 
         buttonProximoEndereco.setOnClickListener {
             if(editTextCEP.text.toString().isEmpty()){
@@ -36,25 +47,32 @@ class CadastraEnderecoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val novaRepublica = Republica(editTextRua.text.toString(), editTextCEP.text.toString(),
-                editTextBairro.text. toString(), editTextNumeroResidencia.text.toString())
+            if(republica == null) republica = Republica() // se estiver iniciando o cadatro cria uma nova republica
+            // usamos ?.let para tratar objetos nullables
+            republica?.let {
+                it.rua = editTextRua.text.toString()
+                it.cep = editTextCEP.text.toString()
+                it.bairro = editTextBairro.text.toString()
+                it.num_residencia = editTextNumeroResidencia.text.toString()
+            }
 
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
-            intent.putExtra("novaRepublica", novaRepublica)
+            intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
 
         }
 
+        // no passo 1 é só fechar que já volta pra lista.
+        // TODO: colocar uma pergunta para confirmar se o usuário deseja cancelar o cadastro
         buttonVoltarEndereco.setOnClickListener {
-            val intent = Intent(this, perfil::class.java)
-            startActivity(intent)
             finish()
         }
     }
+
+    // no passo 1 é só fechar que já volta pra lista.
+    // TODO: colocar uma pergunta pra confirmar se o usuário deseja cancelar o cadastro
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this, perfil::class.java)
-        startActivity(intent)
         finish()
     }
 }
