@@ -47,7 +47,6 @@ class AdicaoDisponibilidadeActivity : AppCompatActivity() {
             val intent = Intent(this, ListaRepublicasActivity::class.java)
             intent.putExtra("novaRepublica", novaRepublica)
             startActivity(intent)
-            finish()
         }
 
         buttonVoltarDisponibilidade.setOnClickListener {

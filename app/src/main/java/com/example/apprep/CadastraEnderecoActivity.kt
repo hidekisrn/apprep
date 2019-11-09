@@ -42,7 +42,7 @@ class CadastraEnderecoActivity : AppCompatActivity() {
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
             intent.putExtra("novaRepublica", novaRepublica)
             startActivity(intent)
-            finish()
+
         }
 
         buttonVoltarEndereco.setOnClickListener {

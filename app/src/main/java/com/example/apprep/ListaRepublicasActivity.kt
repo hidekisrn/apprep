@@ -12,7 +12,9 @@ import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
 
 
 class ListaRepublicasActivity : AppCompatActivity() {
+
     val listaRepublica: MutableList<Republica> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_republicas)
@@ -28,13 +30,14 @@ class ListaRepublicasActivity : AppCompatActivity() {
             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
             detalhesRepublica.putExtra("novaRepublica", it)
             this.startActivity(detalhesRepublica)
-            this.finish()
+
         }
         val layoutManager = LinearLayoutManager(this)
 
         rvRepublicas.adapter = adapter
         rvRepublicas.layoutManager = layoutManager
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
         val intent = Intent(this, AdicaoDisponibilidadeActivity::class.java)

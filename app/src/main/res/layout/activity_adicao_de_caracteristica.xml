@@ -14,10 +14,9 @@
         android:paddingBottom="16dp">
 
         <RelativeLayout
-            android:background="@drawable/squarebox"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="2dp">
+            android:background="@color/colorPrimary">
             <Button
                 android:id="@+id/buttonVoltarCaracteristica"
                 android:background="@drawable/back_24px"
@@ -191,7 +190,8 @@
             android:layout_marginLeft = "110dp"
             android:layout_marginRight = "110dp"
             android:gravity="center"
-            android:text="Próximo" />
+            android:text="Próximo"
+            android:backgroundTint="@color/colorAccent"/>
 
     </LinearLayout>
 

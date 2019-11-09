@@ -42,7 +42,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
             val abreLista = Intent(this, AdicaoDisponibilidadeActivity::class.java)
             abreLista.putExtra("novaRepublica", novaRepublica)
             startActivity(abreLista)
-            finish()
+
         }
 
         buttonVoltarFoto.setOnClickListener {

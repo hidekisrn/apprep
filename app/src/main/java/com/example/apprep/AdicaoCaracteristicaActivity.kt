@@ -82,7 +82,7 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
                 val intent = Intent(this, AdicaoFotoActivity::class.java)
                 intent.putExtra("novaRepublica", novaRepublica)
                 startActivity(intent)
-                finish()
+
             }
         }
 

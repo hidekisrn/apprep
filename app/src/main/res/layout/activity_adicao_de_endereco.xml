@@ -100,7 +100,8 @@
             android:layout_marginLeft = "110dp"
             android:layout_marginRight = "110dp"
             android:gravity="center"
-            android:text="Próximo" />
+            android:text="Próximo"
+            android:backgroundTint="@color/colorAccent"/>
 
 
     </LinearLayout>
