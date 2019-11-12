@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ListaReservasActivity">
+
+    <Button
+        android:id="@+id/adicionarReservas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/squarebox"
+        android:text="procurar por reservas"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReservas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/reserva_item_lista"/>
+
+</LinearLayout>

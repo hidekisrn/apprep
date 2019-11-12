@@ -22,6 +22,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
 
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
         if(republica.foto != null) fotoCapa.setImageURI(Uri.parse(republica.foto))
+
         //TODO: setar das outras fotos
 
         buttonAdicionarCapa.setOnClickListener {

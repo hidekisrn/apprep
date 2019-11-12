@@ -12,12 +12,13 @@ class DetalhesRepublica : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_republica)
 
-        val republica: Republica? = intent.getSerializableExtra("novaRepublica") as Republica?
+        val republica: Republica? = intent.getSerializableExtra(REPUBLICA) as Republica?
         if(republica != null)
             carregaDados(republica)
 
         buttonReservarRep.setOnClickListener{
             val intent = Intent(this, ReservaDeVagaActivity::class.java)
+            intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
             finish()
         }
@@ -49,7 +50,7 @@ class DetalhesRepublica : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this, DetalhesRepublica::class.java)
+        val intent = Intent(this, ListaRepublicasActivity::class.java)
         startActivity(intent)
         finish()
     }

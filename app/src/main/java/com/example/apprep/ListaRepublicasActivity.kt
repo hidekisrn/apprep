@@ -39,7 +39,7 @@ class ListaRepublicasActivity : AppCompatActivity() {
         val adapter = RepublicaAdapter(this, listaRepublica ?: listOf())
         adapter.configuraClique {
             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
-            detalhesRepublica.putExtra("novaRepublica", it)
+            detalhesRepublica.putExtra(REPUBLICA, it)
             this.startActivity(detalhesRepublica)
         }
 

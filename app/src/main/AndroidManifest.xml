@@ -54,6 +54,7 @@
         </activity>
         <activity android:name=".DetalhesRepublica"/>
         <activity android:name=".ReservaDeVagaActivity"/>
+        <activity android:name=".ListaReservasActivity"/>
     </application>
 
 </manifest>

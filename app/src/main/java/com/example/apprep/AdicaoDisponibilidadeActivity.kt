@@ -53,6 +53,8 @@ class AdicaoDisponibilidadeActivity : AppCompatActivity() {
             val republicas: MutableList<Republica> = Paper.book().read(LISTA_REPUBLICAS) ?: mutableListOf()
             republicas.add(republica)
             Paper.book().write(LISTA_REPUBLICAS, republicas)
+            val intent = Intent(this, ListaRepublicasActivity::class.java)
+            startActivity(intent)
             finish()
         }
 

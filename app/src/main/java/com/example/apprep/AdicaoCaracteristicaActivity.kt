@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_adicao_de_caracteristica.*
 
-
+// PASSO 2
 class AdicaoCaracteristicaActivity : AppCompatActivity() {
 
     var counterAcomodacao = 0
@@ -22,6 +22,11 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
         //TODO: preencher campos com as informações que constam no objeto, por exemplo:
         acomodacaoCounter.setText(republica.vagas ?: "0")
+        banheiroCounter.setText(republica.banheiros ?: "0")
+        carroCounter.setText(republica.vagasCarro ?: "0")
+        editTextNomedaRepublica.setText(republica.nome ?: "")
+        editTextPreco.setText(republica.preco ?: "")
+        editTextDescricaoAcomodacao.setText(republica.descricao ?: "")
         //.... outros campos
 
         buttonDecrementarAcomodacao.setOnClickListener {

@@ -19,6 +19,10 @@ class CadastraEnderecoActivity : AppCompatActivity() {
         republica?.let {
             //TODO: preencher campos com as informações que constam no objeto, por exemplo:
             editTextCEP.setText(it.cep ?: "")
+            editTextRua.setText(it.rua ?:"")
+            editTextNumeroResidencia.setText(it.num_residencia ?: "")
+            editTextBairro.setText(it.bairro ?: "")
+
             //.... outros campos
         }
 
@@ -59,7 +63,7 @@ class CadastraEnderecoActivity : AppCompatActivity() {
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
             intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
-
+            finish()
         }
 
         // no passo 1 é só fechar que já volta pra lista.
