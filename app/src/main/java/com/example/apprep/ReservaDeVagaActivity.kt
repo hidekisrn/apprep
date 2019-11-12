@@ -42,14 +42,15 @@ class ReservaDeVagaActivity : AppCompatActivity() {
             }
 
             val reserva = Reserva(editTextDataChegada.text.toString(), editTextHorarioChegada.text.toString(),
-                editTextDataSaida.text.toString(), editTextPrecoTotal.text.toString(), republica.nome, republica.foto)
+                editTextDataSaida.text.toString(), editTextPrecoTotal.text.toString(), republica.rua, republica.cep, republica.bairro,
+                republica.num_residencia, republica.nome, republica.foto, republica.vagas, republica.vagasCarro, republica.banheiros,
+                republica.preco, republica.descricao)
 
             //salva as reservas na memoria do dispositivo e fecha o cadastro
             val reservas: MutableList<Reserva> = Paper.book().read(LISTA_RESERVAS) ?: mutableListOf()
             reservas.add(reserva)
             Paper.book().write(LISTA_RESERVAS, reservas)
             val intent = Intent(this, ListaReservasActivity::class.java)
-//            intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
             finish()
         }

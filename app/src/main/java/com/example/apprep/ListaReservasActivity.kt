@@ -9,12 +9,11 @@ import com.example.apprep.R
 import com.example.apprep.Republica
 import com.example.apprep.RepublicaAdapter
 import io.paperdb.Paper
+import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
 import kotlinx.android.synthetic.main.activity_lista_de_reservas.*
 
 
 class ListaReservasActivity: AppCompatActivity() {
-
-//    lateinit var republica: Republica
 
     var listaReserva: List<Reserva>? = null
         set(value) {
@@ -25,7 +24,6 @@ class ListaReservasActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_reservas)
-//        republica = intent.getSerializableExtra(REPUBLICA) as Republica
     }
 
     override fun onResume() {
@@ -35,11 +33,11 @@ class ListaReservasActivity: AppCompatActivity() {
 
     private fun setAdapter(list: List<Reserva>?) {
         val adapter = ReservaAdapter(this, listaReserva ?: listOf())
-//        adapter.configuraClique {it
-//            val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
-//            detalhesRepublica.putExtra(RESERVA, it)
-//            this.startActivity(detalhesRepublica)
-//        }
+        adapter.configuraClique {reserva ->
+            val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
+            detalhesRepublica.putExtra(RESERVA, reserva)
+            this.startActivity(detalhesRepublica)
+        }
 
         rvReservas.adapter = adapter
         rvReservas.layoutManager = LinearLayoutManager(this)

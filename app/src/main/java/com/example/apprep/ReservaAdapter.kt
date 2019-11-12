@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.reserva_item_lista.view.*
 class ReservaAdapter(val context: Context, val reservas: List<Reserva>) :
     RecyclerView.Adapter<ReservaAdapter.ViewHolder>() {
 
-//    var clique: ((reserva:Reserva) -> Unit)? = null
+    var clique: ((reserva:Reserva) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReservaAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -24,25 +24,25 @@ class ReservaAdapter(val context: Context, val reservas: List<Reserva>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(context, reservas[position])
+        holder.bindView(context, reservas[position], clique)
     }
 
-//    fun configuraClique(clique: ((reserva:Reserva) -> Unit)){
-//        this.clique = clique
-//    }
+    fun configuraClique(clique: ((reserva:Reserva) -> Unit)){
+        this.clique = clique
+    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindView(context: Context, reserva: Reserva) {//, clique: ((reserva:Reserva) -> Unit)? ) {
-            itemView.tvNomeRep.text = reserva.nome_rep
+        fun bindView(context: Context, reserva: Reserva, clique: ((reserva:Reserva) -> Unit)? ) {
+            itemView.tvNomeRep.text = reserva.nome_reserva
             itemView.tvCheckin.text = reserva.data_chegada
-            if(reserva.foto_capa != null) {
-                itemView.imgFotoCapa.setImageURI(Uri.parse(reserva.foto_capa))
+            if(reserva.foto_reserva != null) {
+                itemView.imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
             }
-//            if(clique != null){
-//                itemView.setOnClickListener{
-//                    clique.invoke(reserva)
-//                }
-//            }
+            if(clique != null){
+                itemView.setOnClickListener{
+                    clique.invoke(reserva)
+                }
+            }
         }
     }
 }

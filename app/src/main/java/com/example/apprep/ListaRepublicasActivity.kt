@@ -15,10 +15,10 @@ import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
 class ListaRepublicasActivity : AppCompatActivity() {
 
     var listaRepublica: List<Republica>? = null
-    set(value) {
-        field = value
-        setAdapter(value)
-    }
+        set(value) {
+            field = value
+            setAdapter(value)
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
