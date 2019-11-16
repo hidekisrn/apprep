@@ -17,4 +17,7 @@ data class Reserva (
     var vagasCarro_reserva: String? = null,
     var banheiros_reserva: String? = null,
     var preco_reserva: String? = null,
-    var descricao_reserva: String? = null): Serializable
+    var descricao_reserva: String? = null
+//    var avaliacao_reserva: Float = 0 as Float,
+//    var count: Int = 0
+): Serializable

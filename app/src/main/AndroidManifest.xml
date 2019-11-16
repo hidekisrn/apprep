@@ -44,17 +44,18 @@
         <activity android:name=".AdicaoFotoActivity" />
         <activity android:name=".AdicaoCaracteristicaActivity" />
         <activity android:name=".CadastraEnderecoActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".ListaRepublicasActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
         <activity android:name=".DetalhesRepublica"/>
         <activity android:name=".ReservaDeVagaActivity"/>
         <activity android:name=".ListaReservasActivity"/>
+        <activity android:name=".AvaliacaoActivity"/>
     </application>
 
 </manifest>

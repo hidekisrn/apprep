@@ -13,4 +13,6 @@ data class Republica(
     var vagasCarro: String? = null,
     var banheiros: String? = null,
     var preco: String? = null,
-    var descricao: String? = null): Serializable
+    var descricao: String? = null
+//    var avaliacao: Float? = null
+): Serializable

@@ -1,99 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetalhesRepublica">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary">
+
+            <Button
+                android:id="@+id/buttonDetalhes"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/back_24px" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="35dp"
+                android:textColor="@color/black"
+                android:text="Detalhes da República" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dtNomeRep"
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
 
         <ImageView
             android:id="@+id/imgFotoCapa"
-            android:src="@drawable/ic_image_24px"
-        android:layout_width="256dp"
-        android:layout_height="144dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="86dp"/>
-
-
-
-
-    <TextView
-        style="@style/DetalhesTextView"
-        android:id="@+id/dtNomeRep"
-        android:layout_marginTop="56dp"
-        android:textAlignment="center"
-        />
-
-
-    <TextView
-        style="@style/DetalhesTextView"
-        android:id="@+id/dtEndereco"
-        android:layout_marginTop="232dp"
-        />
-
-    <TextView
-        style="@style/DetalhesTextView"
-        android:id="@+id/dtVagas"
-        android:layout_marginTop="292dp"
-        />
-
-    <TextView
-        style="@style/DetalhesTextView"
-        android:id="@+id/dtBanheiros"
-        android:layout_marginTop="322dp"
-        />
-
-
-    <TextView
-        style="@style/DetalhesTextView"
-        android:id="@+id/dtVagasCarro"
-        android:layout_marginTop="352dp"
-        />
-
-    <TextView
-        style="@style/DetalhesTextView"
-        android:id="@+id/dtPreco"
-        android:layout_marginTop="382dp"
-        />
-
-    <TextView
-        style="@style/DetalhesTextView"
-        android:id="@+id/dtDetalhes"
-        android:layout_marginTop="412dp"
-        />
-
-
-    <Button
-        android:id="@+id/buttonReservarRep"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop = "640dp"
-        android:layout_marginLeft = "110dp"
-        android:layout_marginRight = "110dp"
-        android:gravity="center"
-        android:text="Reservar Vaga"
-        android:backgroundTint="@color/colorAccent"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary">
+            android:layout_width="256dp"
+            android:layout_height="144dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_image_24px" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Detalhes da República"
-            android:textColor="#000"
-            android:textSize="20sp"/>
+            android:id="@+id/dtEndereco"
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
 
-    </RelativeLayout>
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/dtVagas"
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            android:id="@+id/dtBanheiros"
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
+
+
+        <TextView
+            android:id="@+id/dtVagasCarro"
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            android:id="@+id/dtPreco"
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
+
+        <TextView
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Avaliação:"/>
+
+
+
+        <RatingBar
+            android:id="@+id/dtrating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="0"
+            style="?android:ratingBarStyleSmall"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"/>
+
+        <TextView
+            android:id="@+id/dtDetalhes"
+            style="@style/DetalhesTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
+
+
+        <Button
+            android:id="@+id/buttonReservarRep"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "24dp"
+            android:layout_marginLeft = "110dp"
+            android:layout_marginRight = "110dp"
+            android:gravity="center"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Reservar Vaga" />
+
+
+    </LinearLayout>
 </ScrollView>

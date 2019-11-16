@@ -4,4 +4,7 @@
     <string name="fb_login_protocol_scheme">fb557685411652426</string>
     <string name="adicionar_republica">Adicionar republica</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_detalhes_republica.*
 
 class DetalhesRepublica : AppCompatActivity() {
@@ -15,11 +16,11 @@ class DetalhesRepublica : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_republica)
 
+
         val reserva: Reserva? = intent.getSerializableExtra(RESERVA) as Reserva?
         val republica: Republica? = intent.getSerializableExtra(REPUBLICA) as Republica?
         if (reserva != null) carregaDadosReserva(reserva)
         if (republica != null) carregaDados(republica)
-
 
         buttonReservarRep.setOnClickListener{
             val intent = Intent(this, ReservaDeVagaActivity::class.java)
@@ -28,6 +29,11 @@ class DetalhesRepublica : AppCompatActivity() {
             finish()
         }
     }
+
+//    override fun onResume() {
+//    super.onResume()
+//
+//    }
 
     private fun carregaDados(republica: Republica) {
         val endereco: String =
@@ -75,6 +81,9 @@ class DetalhesRepublica : AppCompatActivity() {
         dtDetalhes.setText(detalhes)
         if(reserva.foto_reserva != null)
             imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
+//        dtrating_bar.rating = reserva.avaliacao_reserva
+        //if(reserva.avaliacao_reserva != 0 as Float)
+
     }
 
     override fun onBackPressed() {

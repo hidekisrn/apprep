@@ -1,10 +1,12 @@
 package com.example.apprep
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.reserva_item_lista.view.*
 
@@ -12,6 +14,7 @@ class ReservaAdapter(val context: Context, val reservas: List<Reserva>) :
     RecyclerView.Adapter<ReservaAdapter.ViewHolder>() {
 
     var clique: ((reserva:Reserva) -> Unit)? = null
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReservaAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -37,6 +40,11 @@ class ReservaAdapter(val context: Context, val reservas: List<Reserva>) :
             itemView.tvCheckin.text = reserva.data_chegada
             if(reserva.foto_reserva != null) {
                 itemView.imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
+            }
+            itemView.buttonAvaliar.setOnClickListener{
+                val intent = Intent(context, AvaliacaoActivity::class.java)
+                intent.putExtra(RESERVA, reserva)
+                startActivity(context, intent, null)
             }
             if(clique != null){
                 itemView.setOnClickListener{
