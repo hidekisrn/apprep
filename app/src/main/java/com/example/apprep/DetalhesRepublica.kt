@@ -55,6 +55,7 @@ class DetalhesRepublica : AppCompatActivity() {
         dtVagas.setText(vagas)
         dtVagasCarro.setText(vagasCarro)
         dtDetalhes.setText(detalhes)
+        dtrating_bar.rating = republica.avaliacaoMedia
         if(republica.foto != null)
             imgFotoCapa.setImageURI(Uri.parse(republica.foto))
     }
@@ -81,9 +82,6 @@ class DetalhesRepublica : AppCompatActivity() {
         dtDetalhes.setText(detalhes)
         if(reserva.foto_reserva != null)
             imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
-//        dtrating_bar.rating = reserva.avaliacao_reserva
-        //if(reserva.avaliacao_reserva != 0 as Float)
-
     }
 
     override fun onBackPressed() {

@@ -12,23 +12,27 @@ import kotlinx.android.synthetic.main.activity_avaliacao.*
 
 class AvaliacaoActivity : AppCompatActivity() {
 
-    lateinit var reserva: Reserva
+    lateinit var republica: Republica
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_avaliacao)
 
-//        reserva = intent.getSerializableExtra(RESERVA) as Reserva
-//        val reservas: MutableList<Reserva> = Paper.book().read(LISTA_RESERVAS) ?: mutableListOf()
-//        val index  = reservas.indexOf(reserva)
+        republica = intent.getSerializableExtra(REPUBLICA) as Republica
+        val republicas: MutableList<Republica> = Paper.book().read(LISTA_REPUBLICAS) ?: mutableListOf()
+        val index  = republicas.indexOf(republica)
 
 
         buttonSubmeterAvaliacao.setOnClickListener{
             val ratingValue = rating_bar.rating
-//            reserva.count += 1
-//            reserva.avaliacao_reserva = reserva.avaliacao_reserva?.plus(ratingValue)?.div(reserva.count)
-//            reservas.set(index, reserva)
-//            Paper.book().write(LISTA_RESERVAS, reservas)
+            republica.avaliacaoSoma += ratingValue
+            republica.countAvaliacao = republica.countAvaliacao + 1
+            republica.avaliacaoMedia = republica.avaliacaoSoma/republica.countAvaliacao
+            republicas[index] = republica
+            Paper.book().write(LISTA_REPUBLICAS, republicas)
+            val intent = Intent(this, ListaRepublicasActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         buttonVoltarAvaliacao.setOnClickListener{

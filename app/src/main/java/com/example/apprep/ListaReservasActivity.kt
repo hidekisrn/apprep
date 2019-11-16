@@ -15,6 +15,8 @@ import kotlinx.android.synthetic.main.activity_lista_de_reservas.*
 
 class ListaReservasActivity: AppCompatActivity() {
 
+    lateinit var republica: Republica
+
     var listaReserva: List<Reserva>? = null
         set(value) {
             field = value
@@ -24,6 +26,7 @@ class ListaReservasActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_reservas)
+        republica = intent.getSerializableExtra(REPUBLICA) as Republica
     }
 
     override fun onResume() {
@@ -32,7 +35,7 @@ class ListaReservasActivity: AppCompatActivity() {
     }
 
     private fun setAdapter(list: List<Reserva>?) {
-        val adapter = ReservaAdapter(this, listaReserva ?: listOf())
+        val adapter = ReservaAdapter(this, listaReserva ?: listOf(), republica)
         adapter.configuraClique {reserva ->
             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
             detalhesRepublica.putExtra(RESERVA, reserva)

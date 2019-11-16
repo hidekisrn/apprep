@@ -2,7 +2,6 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -38,13 +37,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:text="Avalie a república na qual você está acomodado:"
             android:textColor="@color/black"/>
 
         <RatingBar
             android:id="@+id/rating_bar"
+            android:layout_marginLeft="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
@@ -55,7 +54,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:text="Comentários sobre a república (opcional): "
             android:textColor="@color/black"/>
@@ -64,7 +62,7 @@
             android:id="@+id/editTextComentarios"
             android:background="@drawable/squarebox"
             android:layout_width="match_parent"
-            android:layout_height="360dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
             android:layout_marginTop="16dp"
