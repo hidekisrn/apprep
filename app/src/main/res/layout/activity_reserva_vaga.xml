@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastraEnderecoActivity">
+    tools:context=".ReservaDeVagaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="40dp"
             android:background="@color/colorPrimary">
             <Button
-                android:id="@+id/buttonVoltarEndereco"
+                android:id="@+id/buttonVoltarReserva"
                 android:background="@drawable/back_24px"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -30,12 +30,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="35dp"
-                android:text="Cadastro de Endereço"
+                android:text="Reserva de Vaga"
                 android:textColor="@color/black"/>
         </RelativeLayout>
 
         <EditText
-            android:id="@+id/editTextCEP"
+            android:id="@+id/editTextDataChegada"
             android:background="@drawable/squarebox"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -45,12 +45,12 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="CEP"
+            android:hint="Data da chegada"
             android:maxLines="1"
             android:inputType="number"/>
 
         <EditText
-            android:id="@+id/editTextRua"
+            android:id="@+id/editTextHorarioChegada"
             android:background="@drawable/squarebox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,11 +60,11 @@
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Rua"
+            android:hint="Horário da chegada"
             android:inputType="textCapWords" />
 
         <EditText
-            android:id="@+id/editTextNumeroResidencia"
+            android:id="@+id/editTextDataSaida"
             android:background="@drawable/squarebox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -74,12 +74,12 @@
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Número da residência"
+            android:hint="Data da saída"
             android:maxLines="1"
             android:inputType="number"/>
 
         <EditText
-            android:id="@+id/editTextBairro"
+            android:id="@+id/editTextPrecoTotal"
             android:background="@drawable/squarebox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -89,18 +89,18 @@
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Bairro"
+            android:hint="Preço total"
             android:inputType="textCapWords" />
 
         <Button
-            android:id="@+id/buttonProximoEndereco"
+            android:id="@+id/buttonReservar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop = "24dp"
             android:layout_marginLeft = "110dp"
             android:layout_marginRight = "110dp"
             android:gravity="center"
-            android:text="Próximo" />
+            android:text="Reservar" />
 
 
     </LinearLayout>

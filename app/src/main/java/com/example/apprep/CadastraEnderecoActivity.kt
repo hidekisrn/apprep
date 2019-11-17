@@ -36,17 +36,25 @@ class CadastraEnderecoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val republica = Republica("",editTextRua.text.toString(), editTextCEP.text.toString(),
+            val novaRepublica = Republica(editTextRua.text.toString(), editTextCEP.text.toString(),
                 editTextBairro.text. toString(), editTextNumeroResidencia.text.toString())
 
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
-            intent.putExtra("novaRepublica", republica)
+            intent.putExtra("novaRepublica", novaRepublica)
             startActivity(intent)
+            finish()
         }
 
         buttonVoltarEndereco.setOnClickListener {
             val intent = Intent(this, perfil::class.java)
             startActivity(intent)
+            finish()
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, perfil::class.java)
+        startActivity(intent)
+        finish()
     }
 }

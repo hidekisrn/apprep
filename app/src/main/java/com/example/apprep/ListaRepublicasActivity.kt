@@ -25,14 +25,20 @@ class ListaRepublicasActivity : AppCompatActivity() {
 
         val adapter = RepublicaAdapter(this, listaRepublica)
         adapter.configuraClique {
-             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
-             detalhesRepublica.putExtra("novaRepublica", it)
-             this.startActivity(detalhesRepublica)
+            val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
+            detalhesRepublica.putExtra("novaRepublica", it)
+            this.startActivity(detalhesRepublica)
+            this.finish()
         }
         val layoutManager = LinearLayoutManager(this)
 
         rvRepublicas.adapter = adapter
         rvRepublicas.layoutManager = layoutManager
     }
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, AdicaoDisponibilidadeActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
