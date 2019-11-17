@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_action_home"
+        />
+    <item
+        android:title="Reservas"
+        android:id="@+id/reservas"
+        android:icon="@drawable/ic_action_reservas"/>
+    <item
+        android:title="Perfil"
+        android:id="@+id/perfil"
+        android:icon="@drawable/ic_action_perfil"/>
+</menu>

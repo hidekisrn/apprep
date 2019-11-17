@@ -51,6 +51,7 @@ class ReservaDeVagaActivity : AppCompatActivity() {
             reservas.add(reserva)
             Paper.book().write(LISTA_RESERVAS, reservas)
             val intent = Intent(this, ListaReservasActivity::class.java)
+            intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
             finish()
         }

@@ -3,11 +3,7 @@ package com.example.apprep
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.apprep.R
-import com.example.apprep.Republica
-import com.example.apprep.RepublicaAdapter
 import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
 
@@ -46,5 +42,4 @@ class ListaRepublicasActivity : AppCompatActivity() {
         rvRepublicas.adapter = adapter
         rvRepublicas.layoutManager = LinearLayoutManager(this)
     }
-
 }

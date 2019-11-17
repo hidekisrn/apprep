@@ -1,7 +1,6 @@
 package com.example.apprep
 
 import android.content.Context
-import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
