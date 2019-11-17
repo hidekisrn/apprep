@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_cadastro.*
 
-class cadastro : AppCompatActivity() {
+class CadastroActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +48,7 @@ class cadastro : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val intent = Intent(this, perfil::class.java)
+            val intent = Intent(this, PerfilActivity::class.java)
             startActivity(intent)
         }
 

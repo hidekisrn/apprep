@@ -10,11 +10,12 @@ import com.example.apprep.Republica
 import com.example.apprep.RepublicaAdapter
 import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
+import kotlinx.android.synthetic.main.activity_lista_de_reservas.*
 
 
-class ListaRepublicasActivity : AppCompatActivity() {
+class ListaReservasActivity: AppCompatActivity() {
 
-    var listaRepublica: List<Republica>? = null
+    var listaReserva: List<Reserva>? = null
         set(value) {
             field = value
             setAdapter(value)
@@ -22,29 +23,23 @@ class ListaRepublicasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lista_de_republicas)
-
-        adicionarRepublica.setOnClickListener {
-            val intent = Intent(this, CadastraEnderecoActivity::class.java)
-            startActivity(intent)
-        }
+        setContentView(R.layout.activity_lista_de_reservas)
     }
 
     override fun onResume() {
         super.onResume()
-        listaRepublica = Paper.book().read(LISTA_REPUBLICAS) // Paper é uma lib para armazenar dados no dispositivo
+        listaReserva = Paper.book().read(LISTA_RESERVAS) // Paper é uma lib para armazenar dados no dispositivo
     }
 
-    private fun setAdapter(list: List<Republica>?) {
-        val adapter = RepublicaAdapter(this, listaRepublica ?: listOf())
-        adapter.configuraClique {
+    private fun setAdapter(list: List<Reserva>?) {
+        val adapter = ReservaAdapter(this, listaReserva ?: listOf())
+        adapter.configuraClique {reserva ->
             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
-            detalhesRepublica.putExtra(REPUBLICA, it)
+            detalhesRepublica.putExtra(RESERVA, reserva)
             this.startActivity(detalhesRepublica)
         }
 
-        rvRepublicas.adapter = adapter
-        rvRepublicas.layoutManager = LinearLayoutManager(this)
+        rvReservas.adapter = adapter
+        rvReservas.layoutManager = LinearLayoutManager(this)
     }
-
 }

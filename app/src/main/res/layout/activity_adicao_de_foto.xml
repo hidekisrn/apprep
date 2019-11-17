@@ -16,8 +16,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/squarebox"
-            android:layout_marginTop="2dp">
+            android:background="@color/colorPrimary">
 
             <Button
                 android:id="@+id/buttonVoltarFoto"
@@ -50,7 +49,8 @@
         <Button
             style="@style/FormTextView"
             android:text="Adicionar foto de capa"
-            android:id="@+id/buttonAdicionarCapa"/>
+            android:id="@+id/buttonAdicionarCapa"
+            android:backgroundTint="@color/colorAccent"/>
 
         <TextView
             style="@style/FormTextView"
@@ -66,7 +66,8 @@
         <Button
             style="@style/FormTextView"
             android:text="Adicionar demais fotos"
-            android:id="@+id/buttonAdicionarFotos"/>
+            android:id="@+id/buttonAdicionarFotos"
+            android:backgroundTint="@color/colorAccent"/>
 
         <Button
             android:id="@+id/buttonProximoFoto"
@@ -76,7 +77,8 @@
             android:layout_marginLeft = "110dp"
             android:layout_marginRight = "110dp"
             android:gravity="center"
-            android:text="Próximo" />
+            android:text="Próximo"
+            android:backgroundTint="@color/colorAccent"/>
 
     </LinearLayout>
 

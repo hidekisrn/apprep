@@ -79,14 +79,16 @@
                     android:layout_width="110dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="60dp"
-                    android:text="Próximo" />
+                    android:text="Próximo"
+                    android:backgroundTint="@color/colorAccent"/>
 
             <Button
                 android:id="@+id/buttonCadastrar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="195dp"
-                android:text="Cadastrar-se"/>
+                android:text="Cadastrar-se"
+                android:backgroundTint="@color/colorAccent"/>
 
         </RelativeLayout>
 
@@ -109,7 +111,8 @@
             android:gravity="center"
             android:text="Recuperar senha"
             android:layout_marginTop = "5dp"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/colorAccent"/>
 
         <TextView
             android:id="@+id/textViewNomeGoogle"

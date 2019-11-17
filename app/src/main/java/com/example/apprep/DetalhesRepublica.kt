@@ -8,16 +8,22 @@ import kotlinx.android.synthetic.main.activity_detalhes_republica.*
 
 class DetalhesRepublica : AppCompatActivity() {
 
+    lateinit var republica: Republica
+    lateinit var reserva: Reserva
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes_republica)
 
-        val republica: Republica? = intent.getSerializableExtra("novaRepublica") as Republica?
-        if(republica != null)
-            carregaDados(republica)
+        val reserva: Reserva? = intent.getSerializableExtra(RESERVA) as Reserva?
+        val republica: Republica? = intent.getSerializableExtra(REPUBLICA) as Republica?
+        if (reserva != null) carregaDadosReserva(reserva)
+        if (republica != null) carregaDados(republica)
+
 
         buttonReservarRep.setOnClickListener{
             val intent = Intent(this, ReservaDeVagaActivity::class.java)
+            intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
             finish()
         }
@@ -47,9 +53,33 @@ class DetalhesRepublica : AppCompatActivity() {
             imgFotoCapa.setImageURI(Uri.parse(republica.foto))
     }
 
+    private fun carregaDadosReserva(reserva: Reserva) {
+        val endereco: String =
+            reserva.rua_reserva + ", " + reserva.num_residencia_reserva + " - " + reserva.bairro_reserva +  ", São Carlos - SP, " + reserva.cep_reserva
+        val preco: String =
+            "R$" + reserva.preco_reserva + " pernoite"
+        val vagas: String? =
+            "Vagas disponíveis: " + reserva.vagas_reserva
+        val vagasCarro: String? =
+            "Vagas para carro: " + reserva.vagasCarro_reserva
+        val banheiro: String? =
+            "Banheiros: " + reserva.banheiros_reserva
+        val detalhes: String? =
+            "Detalhes: \n" + reserva.descricao_reserva
+        dtNomeRep.setText(reserva.nome_reserva)
+        dtEndereco.setText(endereco)
+        dtBanheiros.setText(banheiro)
+        dtPreco.setText(preco)
+        dtVagas.setText(vagas)
+        dtVagasCarro.setText(vagasCarro)
+        dtDetalhes.setText(detalhes)
+        if(reserva.foto_reserva != null)
+            imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
+    }
+
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this, DetalhesRepublica::class.java)
+        val intent = Intent(this, ListaRepublicasActivity::class.java)
         startActivity(intent)
         finish()
     }

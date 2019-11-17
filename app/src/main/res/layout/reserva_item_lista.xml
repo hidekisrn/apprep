@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="72dp">
+
+    <ImageView
+        android:id="@+id/imgFotoCapa"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_image_24px"/>
+
+
+    <LinearLayout
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvNomeRep"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:gravity="bottom"
+            android:text="Nome"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvCheckin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:text="Check-in"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonContatarDono"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorAccent"
+        android:text="contatar dono"
+        android:textSize="9dp"/>
+
+    <Button
+        android:id="@+id/buttonAvaliar"
+        android:layout_width="100dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/colorAccent"
+        android:text="avaliar"
+        android:textSize="9dp"/>
+
+</LinearLayout>

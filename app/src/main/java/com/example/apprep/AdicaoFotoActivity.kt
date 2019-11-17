@@ -7,18 +7,23 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build.*
 import kotlinx.android.synthetic.main.activity_adicao_de_foto.*
 
+// PASSO 3
 class AdicaoFotoActivity : AppCompatActivity() {
 
-    lateinit var novaRepublica: Republica
+    lateinit var republica: Republica
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_foto)
 
-        novaRepublica = intent.getSerializableExtra("novaRepublica") as Republica
+        republica = intent.getSerializableExtra(REPUBLICA) as Republica
+        if(republica.foto != null) fotoCapa.setImageURI(Uri.parse(republica.foto))
+
+        //TODO: setar das outras fotos
 
         buttonAdicionarCapa.setOnClickListener {
             if (VERSION.SDK_INT >= VERSION_CODES.M){
@@ -40,13 +45,14 @@ class AdicaoFotoActivity : AppCompatActivity() {
 
         buttonProximoFoto.setOnClickListener {
             val abreLista = Intent(this, AdicaoDisponibilidadeActivity::class.java)
-            abreLista.putExtra("novaRepublica", novaRepublica)
+            abreLista.putExtra(REPUBLICA, republica)
             startActivity(abreLista)
-            finish()
+
         }
 
         buttonVoltarFoto.setOnClickListener {
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
+            intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
             finish()
         }
@@ -55,6 +61,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
+        intent.putExtra(REPUBLICA, republica)
         startActivity(intent)
         finish()
     }
@@ -93,7 +100,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
             fotoCapa.setImageURI(data?.data)
-            novaRepublica.foto = data?.data.toString()
+            republica.foto = data?.data.toString()
         }
     }
 }

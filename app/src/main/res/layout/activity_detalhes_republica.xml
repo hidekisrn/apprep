@@ -78,11 +78,12 @@
         android:layout_marginLeft = "110dp"
         android:layout_marginRight = "110dp"
         android:gravity="center"
-        android:text="Reservar Vaga" />
+        android:text="Reservar Vaga"
+        android:backgroundTint="@color/colorAccent"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="40dp"
         android:background="@color/colorPrimary">
 
         <TextView
@@ -91,8 +92,7 @@
             android:gravity="center"
             android:text="Detalhes da República"
             android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="normal" />
+            android:textSize="20sp"/>
 
     </RelativeLayout>
     </RelativeLayout>

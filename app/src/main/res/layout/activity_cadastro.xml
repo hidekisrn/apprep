@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cadastro">
+    tools:context=".CadastroActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,8 +19,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="@drawable/squarebox"
-                android:layout_marginTop="2dp">
+                android:background="@color/colorPrimary">
                 <Button
                     android:id="@+id/buttonVoltarCadastro"
                     android:background="@drawable/back_24px"
@@ -133,7 +132,8 @@
                 android:layout_marginLeft = "110dp"
                 android:layout_marginRight = "110dp"
                 android:gravity="center"
-                android:text="Finalizar Cadastro" />
+                android:text="Finalizar Cadastro"
+                android:backgroundTint="@color/colorAccent"/>
 
         </LinearLayout>
 

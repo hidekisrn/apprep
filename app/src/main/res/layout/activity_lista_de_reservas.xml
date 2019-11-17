@@ -4,21 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ListaRepublicasActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRepublicas"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        tools:listitem="@layout/republica_item_lista"/>
+    tools:context=".ListaReservasActivity">
 
     <Button
-        android:id="@+id/adicionarRepublica"
+        android:id="@+id/adicionarReservas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/squarebox"
-        android:text="@string/adicionar_republica"/>
+        android:text="procurar por reservas"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReservas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/reserva_item_lista"/>
 
 </LinearLayout>
