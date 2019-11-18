@@ -18,7 +18,7 @@
             android:background="@color/colorPrimary">
 
             <Button
-                android:id="@+id/buttonDetalhes"
+                android:id="@+id/buttonVoltarDetalhes"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"

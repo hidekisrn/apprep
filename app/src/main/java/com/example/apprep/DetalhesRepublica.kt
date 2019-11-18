@@ -28,6 +28,13 @@ class DetalhesRepublica : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        buttonVoltarDetalhes.setOnClickListener {
+            val intent = Intent(this, ListaRepublicasActivity::class.java)
+            intent.putExtra(REPUBLICA, republica)
+            startActivity(intent)
+            finish()
+        }
     }
 
 //    override fun onResume() {
