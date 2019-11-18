@@ -6,13 +6,33 @@
     android:orientation="vertical"
     tools:context=".ListaRepublicasActivity">
 
-    <Button
-        android:id="@+id/adicionarRepublica"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/squarebox"
-        android:text="@string/adicionar_republica" />
+        android:layout_marginLeft = "16dp"
+        android:layout_marginRight = "16dp"
+        android:layout_marginTop = "8dp">
+        <Button
+            android:id="@+id/replistaDeRepublicas"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squarebox"
+            android:text="Lista de Republicas" />
+        <Button
+            android:id="@+id/repminhasReservas"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/squarebox"
+            android:text="Minhas Reservas" />
+        <Button
+            android:id="@+id/repmeuPerfil"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="275dp"
+            android:background="@drawable/squarebox"
+            android:text="Meu Perfil" />
+    </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRepublicas"

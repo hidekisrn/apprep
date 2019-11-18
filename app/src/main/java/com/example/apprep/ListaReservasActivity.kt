@@ -26,6 +26,17 @@ class ListaReservasActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_reservas)
+
+        reslistaDeRepublicas.setOnClickListener {
+            val intent = Intent(this, ListaRepublicasActivity::class.java)
+            startActivity(intent)
+        }
+
+        resmeuPerfil.setOnClickListener {
+            val intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
+        }
+
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
     }
 

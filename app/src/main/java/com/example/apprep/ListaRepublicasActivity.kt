@@ -20,9 +20,17 @@ class ListaRepublicasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_republicas)
 
-        adicionarRepublica.setOnClickListener {
-            val intent = Intent(this, CadastraEnderecoActivity::class.java)
+
+        repminhasReservas.setOnClickListener {
+            val intent = Intent(this, ListaReservasActivity::class.java)
             startActivity(intent)
+            finish()
+        }
+
+        repmeuPerfil.setOnClickListener {
+            val intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

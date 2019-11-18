@@ -33,6 +33,23 @@ class login : AppCompatActivity() {
             finish()
         }
 
+        buttonEntrar.setOnClickListener {
+            if(editTextLogin.text.toString().isEmpty()){
+                editTextLogin.requestFocus()
+                editTextLogin.setError("Campo Obrigatório")
+                return@setOnClickListener
+            }
+            if(editTextSenha.text.toString().isEmpty()){
+                editTextSenha.requestFocus()
+                editTextSenha.setError("Campo Obrigatório")
+                return@setOnClickListener
+            }
+
+            val intent = Intent(this, ListaRepublicasActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
 

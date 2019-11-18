@@ -47,7 +47,7 @@
             android:drawablePadding="5dp"
             android:hint="Data da chegada"
             android:maxLines="1"
-            android:inputType="number"/>
+            android:inputType="date"/>
 
         <EditText
             android:id="@+id/editTextHorarioChegada"
@@ -61,7 +61,7 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:hint="Horário da chegada"
-            android:inputType="textCapWords" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/editTextDataSaida"
@@ -76,7 +76,7 @@
             android:imeOptions="actionNext"
             android:hint="Data da saída"
             android:maxLines="1"
-            android:inputType="number"/>
+            android:inputType="date"/>
 
         <EditText
             android:id="@+id/editTextPrecoTotal"
@@ -90,7 +90,7 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:hint="Preço total"
-            android:inputType="textCapWords" />
+            android:inputType="number" />
 
         <Button
             android:id="@+id/buttonReservar"
