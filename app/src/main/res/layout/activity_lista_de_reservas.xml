@@ -6,13 +6,20 @@
     android:orientation="vertical"
     tools:context=".ListaReservasActivity">
 
-    <Button
-        android:id="@+id/adicionarReservas"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.Toolbar
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/squarebox"
-        android:text="procurar por reservas"/>
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        />
+
+
+<!--    <Button-->
+<!--        android:id="@+id/adicionarReservas"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:background="@drawable/squarebox"-->
+<!--        android:text="procurar por reservas"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvReservas"
@@ -20,5 +27,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         tools:listitem="@layout/reserva_item_lista"/>
+
 
 </LinearLayout>

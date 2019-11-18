@@ -81,6 +81,7 @@ class CadastroActivity : AppCompatActivity() {
         buttonVoltarCadastro.setOnClickListener {
             val intent = Intent(this, login::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

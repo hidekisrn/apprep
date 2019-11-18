@@ -14,6 +14,7 @@ class PerfilActivity : AppCompatActivity() {
         adicionarRepublica.setOnClickListener {
             val intent = Intent(this, CadastraEnderecoActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

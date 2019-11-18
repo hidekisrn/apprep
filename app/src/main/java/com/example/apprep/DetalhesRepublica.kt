@@ -55,13 +55,13 @@ class DetalhesRepublica : AppCompatActivity() {
             "Banheiros: " + republica.banheiros
         val detalhes: String? =
             "Detalhes: \n" + republica.descricao
-        dtNomeRep.setText(republica.nome)
-        dtEndereco.setText(endereco)
-        dtBanheiros.setText(banheiro)
-        dtPreco.setText(preco)
-        dtVagas.setText(vagas)
-        dtVagasCarro.setText(vagasCarro)
-        dtDetalhes.setText(detalhes)
+        dtNomeRep.text = republica.nome
+        dtEndereco.text = endereco
+        dtBanheiros.text = banheiro
+        dtPreco.text = preco
+        dtVagas.text = vagas
+        dtVagasCarro.text = vagasCarro
+        dtDetalhes.text = detalhes
         dtrating_bar.rating = republica.avaliacaoMedia
         if(republica.foto != null)
             imgFotoCapa.setImageURI(Uri.parse(republica.foto))
@@ -80,13 +80,13 @@ class DetalhesRepublica : AppCompatActivity() {
             "Banheiros: " + reserva.banheiros_reserva
         val detalhes: String? =
             "Detalhes: \n" + reserva.descricao_reserva
-        dtNomeRep.setText(reserva.nome_reserva)
-        dtEndereco.setText(endereco)
-        dtBanheiros.setText(banheiro)
-        dtPreco.setText(preco)
-        dtVagas.setText(vagas)
-        dtVagasCarro.setText(vagasCarro)
-        dtDetalhes.setText(detalhes)
+        dtNomeRep.text = reserva.nome_reserva
+        dtEndereco.text = endereco
+        dtBanheiros.text = banheiro
+        dtPreco.text = preco
+        dtVagas.text = vagas
+        dtVagasCarro.text = vagasCarro
+        dtDetalhes.text = detalhes
         if(reserva.foto_reserva != null)
             imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
     }
