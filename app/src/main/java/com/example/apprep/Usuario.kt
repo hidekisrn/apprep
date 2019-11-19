@@ -8,4 +8,6 @@ data class Usuario (
     var telefone: String? = null,
     var cpf: String? = null,
     var email: String? = null,
-    var senha: String? = null): Serializable
+    var senha: String? = null,
+    var index: Int = -1,
+    var republica: Int = -1): Serializable

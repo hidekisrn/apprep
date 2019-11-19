@@ -2,6 +2,7 @@ package com.example.apprep
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.paperdb.Paper
@@ -16,14 +17,16 @@ class ListaRepublicasActivity : AppCompatActivity() {
             setAdapter(value)
         }
 
+    lateinit var usuario: Usuario
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_republicas)
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
-        adicionarRepublica.setOnClickListener {
-            val intent = Intent(this, CadastraEnderecoActivity::class.java)
-            startActivity(intent)
-        }
+//        adicionarRepublica.setOnClickListener {
+//
+//        }
     }
 
     override fun onResume() {
@@ -36,7 +39,11 @@ class ListaRepublicasActivity : AppCompatActivity() {
         adapter.configuraClique {
             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
             detalhesRepublica.putExtra(REPUBLICA, it)
+            detalhesRepublica.putExtra(USUARIO, usuario)
             this.startActivity(detalhesRepublica)
+//            val usuario: Usuario
+//            val usuarios: MutableList<Usuario> = Paper.book().read(LISTA_USUARIOS) ?: mutableListOf()
+//            usuario = usuarios[it.usuario]
         }
 
         rvRepublicas.adapter = adapter

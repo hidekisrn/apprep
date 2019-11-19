@@ -13,6 +13,7 @@ class CadastraEnderecoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_endereco)
+        val usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
         // caso o usuário volte para o passo 1 ele vai receber o usuário com dados preenchidos
         republica = intent.getSerializableExtra(REPUBLICA) as Republica?
@@ -62,6 +63,7 @@ class CadastraEnderecoActivity : AppCompatActivity() {
 
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
             intent.putExtra(REPUBLICA, republica)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }

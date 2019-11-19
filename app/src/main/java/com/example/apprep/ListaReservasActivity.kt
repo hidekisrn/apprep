@@ -2,8 +2,6 @@ package com.example.apprep
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.paperdb.Paper
@@ -13,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_lista_de_reservas.*
 class ListaReservasActivity: AppCompatActivity() {
 
     lateinit var republica: Republica
+    lateinit var usuario: Usuario
+    lateinit var usuarioRep: Usuario
 
     var listaReserva: List<Reserva>? = null
         set(value) {
@@ -20,22 +20,24 @@ class ListaReservasActivity: AppCompatActivity() {
             setAdapter(value)
         }
 
-//    lateinit var displayList: MutableList<Reserva>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_reservas)
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
-//        if (listaReserva != null) displayList.addAll(listaReserva!!.asIterable())
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
+        val usuarios: MutableList<Usuario> = Paper.book().read(LISTA_USUARIOS) ?: mutableListOf()
+        usuarioRep = usuarios[republica.usuario]
+
     }
 
     override fun onResume() {
         super.onResume()
-        listaReserva = Paper.book().read(LISTA_RESERVAS) // Paper é uma lib para armazenar dados no dispositivo
+        listaReserva = Paper.book().read(usuario.cpf) // Paper é uma lib para armazenar dados no dispositivo
     }
 
     private fun setAdapter(list: List<Reserva>?) {
-        val adapter = ReservaAdapter(this, listaReserva ?: listOf(), republica)
+        val adapter = ReservaAdapter(this, listaReserva ?: listOf(), republica, usuario, usuarioRep)
         adapter.configuraClique {reserva ->
             val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
             detalhesRepublica.putExtra(RESERVA, reserva)

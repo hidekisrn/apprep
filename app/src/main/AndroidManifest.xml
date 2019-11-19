@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test"></activity>
+<!--        <activity android:name=".test">-->
+<!--            -->
+<!--        </activity>-->
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -49,7 +51,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".login"></activity>
+        <activity android:name=".login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".PerfilActivity" />
         <activity android:name=".AdicaoDisponibilidadeActivity" />
         <activity android:name=".AdicaoFotoActivity" />
@@ -57,11 +65,6 @@
         <activity android:name=".CadastraEnderecoActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ListaRepublicasActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".DetalhesRepublica" />
         <activity android:name=".ReservaDeVagaActivity" />

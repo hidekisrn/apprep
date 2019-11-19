@@ -14,10 +14,13 @@ import java.util.*
 class AdicaoDisponibilidadeActivity : AppCompatActivity() {
 
     lateinit var republica: Republica
+    lateinit var usuario: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_disponibilidade)
+
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
 
@@ -50,10 +53,18 @@ class AdicaoDisponibilidadeActivity : AppCompatActivity() {
 
         buttonFinalizar.setOnClickListener {
             //salva as republicas na memoria do dispositivo e fecha o cadastro
+            republica.usuario = usuario.index
             val republicas: MutableList<Republica> = Paper.book().read(LISTA_REPUBLICAS) ?: mutableListOf()
             republicas.add(republica)
             Paper.book().write(LISTA_REPUBLICAS, republicas)
+            val index = republicas.indexOf(republica)
+            usuario.republica = index
+            val usuarios: MutableList<Usuario> = Paper.book().read(LISTA_USUARIOS) ?: mutableListOf()
+            val index2 = usuarios.indexOf(usuario)
+            usuarios[usuario.index] = usuario
+            Paper.book().write(LISTA_USUARIOS, usuarios)
             val intent = Intent(this, ListaRepublicasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
@@ -65,6 +76,7 @@ class AdicaoDisponibilidadeActivity : AppCompatActivity() {
             finish()
         }
     }
+
 
     override fun onBackPressed() {
         super.onBackPressed()

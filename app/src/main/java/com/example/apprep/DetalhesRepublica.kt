@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_detalhes_republica.*
 class DetalhesRepublica : AppCompatActivity() {
 
     lateinit var republica: Republica
-    lateinit var reserva: Reserva
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,12 +18,14 @@ class DetalhesRepublica : AppCompatActivity() {
 
         val reserva: Reserva? = intent.getSerializableExtra(RESERVA) as Reserva?
         val republica: Republica? = intent.getSerializableExtra(REPUBLICA) as Republica?
+        val usuario: Usuario = intent.getSerializableExtra(USUARIO) as Usuario
         if (reserva != null) carregaDadosReserva(reserva)
         if (republica != null) carregaDados(republica)
 
         buttonReservarRep.setOnClickListener{
             val intent = Intent(this, ReservaDeVagaActivity::class.java)
             intent.putExtra(REPUBLICA, republica)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }

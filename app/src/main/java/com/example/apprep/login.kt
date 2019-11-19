@@ -13,10 +13,12 @@ import com.google.android.gms.common.SignInButton
 import kotlinx.android.synthetic.main.activity_login.*
 import android.content.Intent
 import android.view.View
+import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 //import androidx.test.orchestrator.junit.BundleJUnitUtils.getResult
 import com.google.android.gms.tasks.Task
+import io.paperdb.Paper
 
 
 //const val RC_SIGN_IN = 123
@@ -31,6 +33,23 @@ class login : AppCompatActivity() {
             val intent = Intent(this, CadastroActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        buttonEntrar.setOnClickListener{
+            val login = editTextLogin.text.toString()
+            val senha = editTextSenha.text.toString()
+            val usuario: Usuario?
+            val usuarios: MutableList<Usuario> = Paper.book().read(LISTA_USUARIOS) ?: mutableListOf()
+            usuario = usuarios.find {
+                it.email == login && it.senha == senha
+            }
+//            Toast.makeText(this, "" + usuario?.nome, Toast.LENGTH_LONG).show()
+            if(usuario != null) {
+                val intent = Intent(this, PerfilActivity::class.java)
+                intent.putExtra(USUARIO, usuario)
+                startActivity(intent)
+                finish()
+            } else Toast.makeText(this, "A senha ou e-mail estão incorretos", Toast.LENGTH_LONG).show()
         }
 
         // Configure sign-in to request the user's ID, email address, and basic
