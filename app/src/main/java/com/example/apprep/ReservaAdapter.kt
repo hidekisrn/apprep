@@ -6,11 +6,18 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.reserva_item_lista.view.*
 
-class ReservaAdapter(val context: Context, val reservas: List<Reserva>, val republica: Republica) :
+class ReservaAdapter(
+    val context: Context,
+    val reservas: List<Reserva>,
+    val republica: Republica,
+    val usuario: Usuario,
+    val usuarioRep: Usuario
+) :
     RecyclerView.Adapter<ReservaAdapter.ViewHolder>() {
 
     var clique: ((reserva:Reserva) -> Unit)? = null
@@ -27,7 +34,7 @@ class ReservaAdapter(val context: Context, val reservas: List<Reserva>, val repu
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(context, reservas[position], clique, republica)
+        holder.bindView(context, reservas[position], clique, republica, usuario, usuarioRep)
     }
 
     fun configuraClique(clique: ((reserva:Reserva) -> Unit)){
@@ -39,7 +46,9 @@ class ReservaAdapter(val context: Context, val reservas: List<Reserva>, val repu
             context: Context,
             reserva: Reserva,
             clique: ((reserva: Reserva) -> Unit)?,
-            republica: Republica
+            republica: Republica,
+            usuario: Usuario,
+            usuarioRep: Usuario
         ) {
             itemView.tvNomeRep.text = reserva.nome_reserva
             itemView.tvCheckin.text = reserva.data_chegada
@@ -49,7 +58,11 @@ class ReservaAdapter(val context: Context, val reservas: List<Reserva>, val repu
             itemView.buttonAvaliar.setOnClickListener{
                 val intent = Intent(context, AvaliacaoActivity::class.java)
                 intent.putExtra(REPUBLICA, republica)
+                intent.putExtra(USUARIO, usuario)
                 startActivity(context, intent, null)
+            }
+            itemView.buttonContatarDono.setOnClickListener{
+                Toast.makeText(context, "Telefone para contato: " + usuarioRep.telefone, Toast.LENGTH_LONG).show()
             }
             if(clique != null){
                 itemView.setOnClickListener{

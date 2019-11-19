@@ -13,12 +13,14 @@ import kotlinx.android.synthetic.main.activity_avaliacao.*
 class AvaliacaoActivity : AppCompatActivity() {
 
     lateinit var republica: Republica
+    lateinit var usuario: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_avaliacao)
 
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
         val republicas: MutableList<Republica> = Paper.book().read(LISTA_REPUBLICAS) ?: mutableListOf()
         val index  = republicas.indexOf(republica)
 
@@ -31,12 +33,14 @@ class AvaliacaoActivity : AppCompatActivity() {
             republicas[index] = republica
             Paper.book().write(LISTA_REPUBLICAS, republicas)
             val intent = Intent(this, ListaRepublicasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
 
         buttonVoltarAvaliacao.setOnClickListener{
             val intent = Intent(this, ListaReservasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
@@ -45,6 +49,7 @@ class AvaliacaoActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         val intent = Intent(this, ListaReservasActivity::class.java)
+        intent.putExtra(USUARIO, usuario)
         startActivity(intent)
         finish()
     }

@@ -6,6 +6,12 @@
     android:orientation="vertical"
     tools:context=".ListaReservasActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        />
+  
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,5 +54,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         tools:listitem="@layout/reserva_item_lista"/>
+
 
 </LinearLayout>

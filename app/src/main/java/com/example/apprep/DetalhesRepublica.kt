@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_detalhes_republica.*
 class DetalhesRepublica : AppCompatActivity() {
 
     lateinit var republica: Republica
-    lateinit var reserva: Reserva
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,12 +18,14 @@ class DetalhesRepublica : AppCompatActivity() {
 
         val reserva: Reserva? = intent.getSerializableExtra(RESERVA) as Reserva?
         val republica: Republica? = intent.getSerializableExtra(REPUBLICA) as Republica?
+        val usuario: Usuario = intent.getSerializableExtra(USUARIO) as Usuario
         if (reserva != null) carregaDadosReserva(reserva)
         if (republica != null) carregaDados(republica)
 
         buttonReservarRep.setOnClickListener{
             val intent = Intent(this, ReservaDeVagaActivity::class.java)
             intent.putExtra(REPUBLICA, republica)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
@@ -55,13 +56,13 @@ class DetalhesRepublica : AppCompatActivity() {
             "Banheiros: " + republica.banheiros
         val detalhes: String? =
             "Detalhes: \n" + republica.descricao
-        dtNomeRep.setText(republica.nome)
-        dtEndereco.setText(endereco)
-        dtBanheiros.setText(banheiro)
-        dtPreco.setText(preco)
-        dtVagas.setText(vagas)
-        dtVagasCarro.setText(vagasCarro)
-        dtDetalhes.setText(detalhes)
+        dtNomeRep.text = republica.nome
+        dtEndereco.text = endereco
+        dtBanheiros.text = banheiro
+        dtPreco.text = preco
+        dtVagas.text = vagas
+        dtVagasCarro.text = vagasCarro
+        dtDetalhes.text = detalhes
         dtrating_bar.rating = republica.avaliacaoMedia
         if(republica.foto != null)
             imgFotoCapa.setImageURI(Uri.parse(republica.foto))
@@ -80,13 +81,13 @@ class DetalhesRepublica : AppCompatActivity() {
             "Banheiros: " + reserva.banheiros_reserva
         val detalhes: String? =
             "Detalhes: \n" + reserva.descricao_reserva
-        dtNomeRep.setText(reserva.nome_reserva)
-        dtEndereco.setText(endereco)
-        dtBanheiros.setText(banheiro)
-        dtPreco.setText(preco)
-        dtVagas.setText(vagas)
-        dtVagasCarro.setText(vagasCarro)
-        dtDetalhes.setText(detalhes)
+        dtNomeRep.text = reserva.nome_reserva
+        dtEndereco.text = endereco
+        dtBanheiros.text = banheiro
+        dtPreco.text = preco
+        dtVagas.text = vagas
+        dtVagasCarro.text = vagasCarro
+        dtDetalhes.text = detalhes
         if(reserva.foto_reserva != null)
             imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
     }

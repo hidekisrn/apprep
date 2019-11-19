@@ -12,6 +12,8 @@ class PerfilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
 
+        val usuario = intent.getSerializableExtra(USUARIO) as Usuario
+      
         plistaDeRepublicas.setOnClickListener {
             val intent = Intent(this, ListaRepublicasActivity::class.java)
             startActivity(intent)
@@ -24,7 +26,9 @@ class PerfilActivity : AppCompatActivity() {
 
         adicionarRepublica.setOnClickListener {
             val intent = Intent(this, CadastraEnderecoActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
+            finish()
         }
     }
 }

@@ -23,19 +23,19 @@
 <!--                android:layout_height="match_parent"-->
 <!--                android:gravity="center"-->
 <!--                android:text="AppRep (teste de cores)" />-->
-
 <!--        </RelativeLayout>-->
 
         <RelativeLayout
-            android:background="#FF1744"
+            android:background="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="40dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="AppRep"
-                android:gravity="center"/>
+                android:text="iRep"
+                android:gravity="center"
+                android:textColor="@color/black"/>
         </RelativeLayout>
 
         <EditText
@@ -50,7 +50,7 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="Login ou Email"/>
+            android:hint="E-mail"/>
 
         <EditText
             android:id="@+id/editTextSenha"

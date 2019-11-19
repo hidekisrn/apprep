@@ -20,6 +20,8 @@ class AdicaoFotoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_foto)
 
+        val usuario = intent.getSerializableExtra(USUARIO) as Usuario
+
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
         if(republica.foto != null) fotoCapa.setImageURI(Uri.parse(republica.foto))
 
@@ -46,6 +48,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
         buttonProximoFoto.setOnClickListener {
             val abreLista = Intent(this, AdicaoDisponibilidadeActivity::class.java)
             abreLista.putExtra(REPUBLICA, republica)
+            abreLista.putExtra(USUARIO, usuario)
             startActivity(abreLista)
 
         }

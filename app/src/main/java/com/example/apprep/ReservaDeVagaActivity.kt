@@ -16,6 +16,9 @@ class ReservaDeVagaActivity : AppCompatActivity() {
 
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
 
+        val usuario: Usuario = intent.getSerializableExtra(USUARIO) as Usuario
+
+
         buttonReservar.setOnClickListener {
             if (editTextDataChegada.text.toString().isEmpty()) {
                 editTextDataChegada.requestFocus()
@@ -46,11 +49,12 @@ class ReservaDeVagaActivity : AppCompatActivity() {
                 republica.num_residencia, republica.nome, republica.foto, republica.vagas, republica.vagasCarro, republica.banheiros,
                 republica.preco, republica.descricao)
 
-            //salva as reservas na memoria do dispositivo e fecha o cadastro
-            val reservas: MutableList<Reserva> = Paper.book().read(LISTA_RESERVAS) ?: mutableListOf()
+
+            val reservas: MutableList<Reserva> = Paper.book().read(usuario.cpf) ?: mutableListOf()
             reservas.add(reserva)
-            Paper.book().write(LISTA_RESERVAS, reservas)
+            Paper.book().write(usuario.cpf, reservas)
             val intent = Intent(this, ListaReservasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             intent.putExtra(REPUBLICA, republica)
             startActivity(intent)
             finish()
