@@ -11,7 +11,34 @@
         android:layout_width="match_parent"
         android:background="@color/colorPrimary"
         />
-
+  
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft = "16dp"
+        android:layout_marginRight = "16dp"
+        android:layout_marginTop = "8dp">
+        <Button
+            android:id="@+id/reslistaDeRepublicas"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squarebox"
+            android:text="Lista de Republicas" />
+        <Button
+            android:id="@+id/resminhasReservas"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/squarebox"
+            android:text="Minhas Reservas" />
+        <Button
+            android:id="@+id/resmeuPerfil"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="275dp"
+            android:background="@drawable/squarebox"
+            android:text="Meu Perfil" />
+    </RelativeLayout>
 
 <!--    <Button-->
 <!--        android:id="@+id/adicionarReservas"-->

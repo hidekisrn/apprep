@@ -64,8 +64,7 @@
         <activity android:name=".AdicaoCaracteristicaActivity" />
         <activity android:name=".CadastraEnderecoActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".ListaRepublicasActivity">
-        </activity>
+        <activity android:name=".ListaRepublicasActivity"></activity>
         <activity android:name=".DetalhesRepublica" />
         <activity android:name=".ReservaDeVagaActivity" />
         <activity android:name=".ListaReservasActivity" />

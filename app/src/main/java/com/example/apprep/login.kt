@@ -34,7 +34,7 @@ class login : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
+      
         buttonEntrar.setOnClickListener{
             val login = editTextLogin.text.toString()
             val senha = editTextSenha.text.toString()

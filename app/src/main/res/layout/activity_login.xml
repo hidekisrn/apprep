@@ -13,7 +13,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="57dp"-->
+<!--            android:background="#FFC4001D">-->
 
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center"-->
+<!--                android:text="AppRep (teste de cores)" />-->
+<!--        </RelativeLayout>-->
 
         <RelativeLayout
             android:background="@color/colorPrimary"
@@ -54,7 +64,8 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="Senha"/>
+            android:hint="Senha"
+            android:inputType="textPassword"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -64,13 +75,13 @@
             android:layout_marginTop = "5dp">
 
 
-                <Button
-                    android:id="@+id/buttonEntrar"
-                    android:layout_width="110dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="60dp"
-                    android:text="Próximo"
-                    android:backgroundTint="@color/colorAccent"/>
+            <Button
+                android:id="@+id/buttonEntrar"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="60dp"
+                android:text="Entrar"
+                android:backgroundTint="@color/colorAccent"/>
 
             <Button
                 android:id="@+id/buttonCadastrar"
@@ -82,18 +93,18 @@
 
         </RelativeLayout>
 
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop = "5dp"/>
+<!--        <com.facebook.login.widget.LoginButton-->
+<!--            android:id="@+id/login_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:layout_marginTop = "5dp"/>-->
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/sign_in_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"/>
+<!--        <com.google.android.gms.common.SignInButton-->
+<!--            android:id="@+id/sign_in_button"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"/>-->
 
         <Button
             android:layout_width="160dp"
@@ -104,6 +115,11 @@
             android:layout_gravity="center_horizontal"
             android:backgroundTint="@color/colorAccent"/>
 
+<!--        <TextView-->
+<!--            android:id="@+id/textViewNomeGoogle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Hello World"/>-->
 
         <TextView
             android:id="@+id/textViewEmailGoogle"

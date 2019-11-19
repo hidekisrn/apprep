@@ -68,8 +68,7 @@
             android:layout_marginTop="16dp"
             android:drawablePadding="5dp"
             android:padding="5dp"
-            android:imeOptions="actionNext"
-            android:inputType="textCapWords" />
+            android:imeOptions="actionNext"/>
 
 
         <Button

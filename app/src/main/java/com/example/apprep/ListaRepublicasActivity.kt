@@ -24,9 +24,17 @@ class ListaRepublicasActivity : AppCompatActivity() {
         setContentView(R.layout.activity_lista_de_republicas)
         usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
-//        adicionarRepublica.setOnClickListener {
-//
-//        }
+        repminhasReservas.setOnClickListener {
+            val intent = Intent(this, ListaReservasActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        repmeuPerfil.setOnClickListener {
+            val intent = Intent(this, PerfilActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     override fun onResume() {

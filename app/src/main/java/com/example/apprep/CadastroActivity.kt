@@ -92,6 +92,12 @@ class CadastroActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        buttonFinalizarCadastro.setOnClickListener {
+            val intent = Intent(this, ListaRepublicasActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onBackPressed() {
