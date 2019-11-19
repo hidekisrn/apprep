@@ -147,7 +147,7 @@
 
         <TextView
             style="@style/FormTextView"
-            android:text="Preço da Acomodação"/>
+            android:text="Preço da Acomodação Pernoite"/>
 
         <EditText
             android:id="@+id/editTextPreco"
@@ -161,7 +161,8 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="R$49,90/pernoite" />
+            android:inputType="numberDecimal"
+            android:hint="49.90" />
 
         <TextView
             style="@style/FormTextView"

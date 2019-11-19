@@ -78,7 +78,7 @@
                 android:drawablePadding="5dp"
                 android:hint="Telefone"
                 android:maxLines="1"
-                android:inputType="number"/>
+                android:inputType="phone"/>
 
             <EditText
                 android:id="@+id/editTextCPF"

@@ -61,7 +61,7 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:hint="Horário da chegada"
-            android:inputType="number" />
+            android:inputType="time" />
 
         <EditText
             android:id="@+id/editTextDataSaida"
@@ -90,7 +90,7 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:hint="Preço total"
-            android:inputType="number" />
+            android:inputType="numberDecimal" />
 
         <Button
             android:id="@+id/buttonReservar"

@@ -34,13 +34,13 @@
             android:text="Meu Perfil" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/adicionarReservas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/squarebox"
-        android:text="procurar por reservas"/>
+<!--    <Button-->
+<!--        android:id="@+id/adicionarReservas"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="8dp"-->
+<!--        android:background="@drawable/squarebox"-->
+<!--        android:text="procurar por reservas"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvReservas"
