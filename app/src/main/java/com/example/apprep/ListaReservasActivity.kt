@@ -10,9 +10,7 @@ import kotlinx.android.synthetic.main.activity_lista_de_reservas.*
 
 class ListaReservasActivity: AppCompatActivity() {
 
-    lateinit var republica: Republica
     lateinit var usuario: Usuario
-    lateinit var usuarioRep: Usuario
 
     var listaReserva: List<Reserva>? = null
         set(value) {
@@ -27,19 +25,19 @@ class ListaReservasActivity: AppCompatActivity() {
 
         reslistaDeRepublicas.setOnClickListener {
             val intent = Intent(this, ListaRepublicasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
+            finish()
         }
 
         resmeuPerfil.setOnClickListener {
             val intent = Intent(this, PerfilActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
+            finish()
         }
 
-        republica = intent.getSerializableExtra(REPUBLICA) as Republica
         usuario = intent.getSerializableExtra(USUARIO) as Usuario
-        val usuarios: MutableList<Usuario> = Paper.book().read(LISTA_USUARIOS) ?: mutableListOf()
-        usuarioRep = usuarios[republica.usuario]
-
     }
 
     override fun onResume() {
@@ -48,14 +46,15 @@ class ListaReservasActivity: AppCompatActivity() {
     }
 
     private fun setAdapter(list: List<Reserva>?) {
-        val adapter = ReservaAdapter(this, listaReserva ?: listOf(), republica, usuario, usuarioRep)
-        adapter.configuraClique {reserva ->
-            val detalhesRepublica = Intent(this, DetalhesRepublica::class.java)
-            detalhesRepublica.putExtra(RESERVA, reserva)
-            this.startActivity(detalhesRepublica)
+        val adapter2 = ReservaAdapter(this, listaReserva ?: listOf(), usuario)
+        adapter2.configuraClique {reserva ->
+            val detalhesRepublica2 = Intent(this, DetalhesRepublica2::class.java)
+            detalhesRepublica2.putExtra(RESERVA, reserva)
+            detalhesRepublica2.putExtra(USUARIO, usuario)
+            this.startActivity(detalhesRepublica2)
         }
 
-        rvReservas.adapter = adapter
+        rvReservas.adapter = adapter2
         rvReservas.layoutManager = LinearLayoutManager(this)
     }
 
@@ -91,4 +90,10 @@ class ListaReservasActivity: AppCompatActivity() {
 //
 //        return super.onCreateOptionsMenu(menu)
 //    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, login::class.java)
+        startActivity(intent)
+        finish()
+    }
 }

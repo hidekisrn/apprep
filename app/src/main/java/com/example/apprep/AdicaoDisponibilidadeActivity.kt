@@ -72,6 +72,7 @@ class AdicaoDisponibilidadeActivity : AppCompatActivity() {
         buttonVoltarDisponibilidade.setOnClickListener {
             val intent = Intent(this, AdicaoFotoActivity::class.java)
             intent.putExtra(REPUBLICA, republica)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
@@ -82,6 +83,7 @@ class AdicaoDisponibilidadeActivity : AppCompatActivity() {
         super.onBackPressed()
         val intent = Intent(this, AdicaoFotoActivity::class.java)
         intent.putExtra(REPUBLICA, republica)
+        intent.putExtra(USUARIO, usuario)
         startActivity(intent)
         finish()
     }

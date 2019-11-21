@@ -15,12 +15,13 @@ import kotlinx.android.synthetic.main.activity_adicao_de_foto.*
 class AdicaoFotoActivity : AppCompatActivity() {
 
     lateinit var republica: Republica
+    lateinit var usuario: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_foto)
 
-        val usuario = intent.getSerializableExtra(USUARIO) as Usuario
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
         if(republica.foto != null) fotoCapa.setImageURI(Uri.parse(republica.foto))
@@ -50,12 +51,13 @@ class AdicaoFotoActivity : AppCompatActivity() {
             abreLista.putExtra(REPUBLICA, republica)
             abreLista.putExtra(USUARIO, usuario)
             startActivity(abreLista)
-
+            finish()
         }
 
         buttonVoltarFoto.setOnClickListener {
             val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
             intent.putExtra(REPUBLICA, republica)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
@@ -65,6 +67,7 @@ class AdicaoFotoActivity : AppCompatActivity() {
         super.onBackPressed()
         val intent = Intent(this, AdicaoCaracteristicaActivity::class.java)
         intent.putExtra(REPUBLICA, republica)
+        intent.putExtra(USUARIO, usuario)
         startActivity(intent)
         finish()
     }

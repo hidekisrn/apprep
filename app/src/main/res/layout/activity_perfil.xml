@@ -1,60 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PerfilActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Perfil"
+            android:textSize="20sp"
+            android:layout_marginLeft="24sp"
+            android:textColor="@color/black"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="16dp">
+        android:layout_height="547dp"
+        android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft = "16dp"
-            android:layout_marginRight = "16dp"
-            android:layout_marginTop = "8dp">
-            <Button
-                android:id="@+id/plistaDeRepublicas"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/squarebox"
-                android:text="Lista de Republicas" />
-            <Button
-                android:id="@+id/pminhasReservas"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140dp"
-                android:background="@drawable/squarebox"
-                android:text="Minhas Reservas" />
-            <Button
-                android:id="@+id/pmeuPerfil"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="275dp"
-                android:background="@drawable/squarebox"
-                android:text="Meu Perfil" />
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:background="@drawable/squarebox"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:background="@drawable/squarebox">
+
             <TextView
                 android:id="@+id/adicionarRepublica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="16dp"
-                android:text="Adicionar republica"/>
+                android:text="Adicionar republica" />
         </RelativeLayout>
 
+
     </LinearLayout>
-</ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft = "16dp"
+        android:layout_marginRight = "16dp"
+        android:layout_marginTop = "8dp">
+        <Button
+            android:id="@+id/plistaDeRepublicas"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squarebox"
+            android:text="Lista de Republicas" />
+        <Button
+            android:id="@+id/pminhasReservas"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/squarebox"
+            android:text="Minhas Reservas" />
+        <Button
+            android:id="@+id/pmeuPerfil"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="275dp"
+            android:background="@drawable/squarebox"
+            android:text="Meu Perfil" />
+    </RelativeLayout>
+</LinearLayout>
 

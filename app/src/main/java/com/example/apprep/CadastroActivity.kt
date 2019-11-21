@@ -61,7 +61,7 @@ class CadastroActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val usuario: Usuario = Usuario(editTextNome.text.toString(), editTextSobrenome.text.toString(), editTextTelefone.text.toString(),
+            val usuario = Usuario(editTextNome.text.toString(), editTextSobrenome.text.toString(), editTextTelefone.text.toString(),
                 editTextCPF.text.toString(), editTextEmail.text.toString(),editTextSenha.text.toString())
 //            if(usuario == null) usuario = Usuario() // se estiver iniciando o cadatro cria uma nova republica
 //            // usamos ?.let para tratar objetos nullables
@@ -92,12 +92,6 @@ class CadastroActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        buttonFinalizarCadastro.setOnClickListener {
-            val intent = Intent(this, ListaRepublicasActivity::class.java)
-            startActivity(intent)
-        }
-
     }
 
     override fun onBackPressed() {

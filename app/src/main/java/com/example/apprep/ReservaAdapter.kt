@@ -9,15 +9,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import io.paperdb.Paper
 import kotlinx.android.synthetic.main.reserva_item_lista.view.*
 
 class ReservaAdapter(
     val context: Context,
     val reservas: List<Reserva>,
-    val republica: Republica,
-    val usuario: Usuario,
-    val usuarioRep: Usuario
-) :
+    val usuario: Usuario) :
     RecyclerView.Adapter<ReservaAdapter.ViewHolder>() {
 
     var clique: ((reserva:Reserva) -> Unit)? = null
@@ -34,7 +32,7 @@ class ReservaAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindView(context, reservas[position], clique, republica, usuario, usuarioRep)
+        holder.bindView(context, reservas[position], clique, usuario)
     }
 
     fun configuraClique(clique: ((reserva:Reserva) -> Unit)){
@@ -46,10 +44,15 @@ class ReservaAdapter(
             context: Context,
             reserva: Reserva,
             clique: ((reserva: Reserva) -> Unit)?,
-            republica: Republica,
-            usuario: Usuario,
-            usuarioRep: Usuario
+            usuario: Usuario
         ) {
+            val republica: Republica
+            val republicas: MutableList<Republica> = Paper.book().read(LISTA_REPUBLICAS) ?: mutableListOf()
+            republica = republicas.first {
+                reserva.republica == it.nome
+            }
+            val usuarios: MutableList<Usuario> = Paper.book().read(LISTA_USUARIOS) ?: mutableListOf()
+            val usuarioRep: Usuario = usuarios[republica.usuario]
             itemView.tvNomeRep.text = reserva.nome_reserva
             itemView.tvCheckin.text = reserva.data_chegada
             if(reserva.foto_reserva != null) {
