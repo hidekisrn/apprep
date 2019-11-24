@@ -34,6 +34,10 @@
                 android:textColor="@color/black"/>
         </RelativeLayout>
 
+        <TextView
+            style="@style/FormTextView"
+            android:text="Data de Chegada"/>
+
         <EditText
             android:id="@+id/editTextDataChegada"
             android:background="@drawable/squarebox"
@@ -41,13 +45,17 @@
             android:layout_width="fill_parent"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="Data da chegada"
+            android:hint="Ex: 14/02/2019"
             android:maxLines="1"
             android:inputType="date"/>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Nome"/>
 
         <EditText
             android:id="@+id/editTextHorarioChegada"
@@ -56,12 +64,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Horário da chegada"
+            android:hint="Ex: 14:02"
             android:inputType="time" />
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Data de saída"/>
 
         <EditText
             android:id="@+id/editTextDataSaida"
@@ -70,27 +82,31 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Data da saída"
+            android:hint="Ex: 18/02/2019"
             android:maxLines="1"
             android:inputType="date"/>
 
-        <EditText
-            android:id="@+id/editTextPrecoTotal"
-            android:background="@drawable/squarebox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft = "16dp"
-            android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
-            android:drawablePadding="5dp"
-            android:padding="5dp"
-            android:imeOptions="actionNext"
-            android:hint="Preço total"
-            android:inputType="numberDecimal" />
+<!--        <TextView-->
+<!--            style="@style/FormTextView"-->
+<!--            android:text="Nome"/>-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editTextPrecoTotal"-->
+<!--            android:background="@drawable/squarebox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft = "16dp"-->
+<!--            android:layout_marginRight = "16dp"-->
+<!--            android:layout_marginTop="1dp"-->
+<!--            android:drawablePadding="5dp"-->
+<!--            android:padding="5dp"-->
+<!--            android:imeOptions="actionNext"-->
+<!--            android:hint="Preço total"-->
+<!--            android:inputType="numberDecimal" />-->
 
         <Button
             android:id="@+id/buttonReservar"
@@ -103,6 +119,6 @@
             android:text="Reservar"
             android:backgroundTint="@color/colorAccent"/>
 
-
     </LinearLayout>
+
 </ScrollView>

@@ -32,6 +32,10 @@
                 android:text="Dados da residência" />
         </RelativeLayout>
 
+        <TextView
+            style="@style/FormTextView"
+            android:text="Nome da república"/>
+
         <EditText
             android:id="@+id/editTextNomedaRepublica"
             android:background="@drawable/squarebox"
@@ -40,11 +44,11 @@
             android:layout_width="fill_parent"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="Nome da república"
+            android:hint="Ex:República Etanois"
             android:inputType="textCapWords" />
 
         <TextView
@@ -187,9 +191,9 @@
             android:id="@+id/buttonProximoCaracteristica"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop = "24dp"
-            android:layout_marginLeft = "110dp"
-            android:layout_marginRight = "110dp"
+            android:layout_marginTop = "24sp"
+            android:layout_marginLeft = "110sp"
+            android:layout_marginRight = "110sp"
             android:gravity="center"
             android:text="Próximo"
             android:backgroundTint="@color/colorAccent"/>

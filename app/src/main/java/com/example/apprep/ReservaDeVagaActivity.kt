@@ -40,14 +40,14 @@ class ReservaDeVagaActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (editTextPrecoTotal.text.toString().isEmpty()) {
-                editTextPrecoTotal.requestFocus()
-                editTextPrecoTotal.setError("Campo obrigatorio")
-                return@setOnClickListener
-            }
+//            if (editTextPrecoTotal.text.toString().isEmpty()) {
+//                editTextPrecoTotal.requestFocus()
+//                editTextPrecoTotal.setError("Campo obrigatorio")
+//                return@setOnClickListener
+//            }
 
             val reserva = Reserva(editTextDataChegada.text.toString(), editTextHorarioChegada.text.toString(),
-                editTextDataSaida.text.toString(), editTextPrecoTotal.text.toString(), republica.rua, republica.cep, republica.bairro,
+                editTextDataSaida.text.toString(), republica.rua, republica.cep, republica.bairro,
                 republica.num_residencia, republica.nome, republica.foto, republica.vagas, republica.vagasCarro, republica.banheiros,
                 republica.preco, republica.descricao)
 

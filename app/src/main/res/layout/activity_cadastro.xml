@@ -35,6 +35,10 @@
                     android:text="Cadastro" />
             </RelativeLayout>
 
+            <TextView
+                style="@style/FormTextView"
+                android:text="Nome"/>
+
             <EditText
                 android:id="@+id/editTextNome"
                 android:background="@drawable/squarebox"
@@ -42,13 +46,17 @@
                 android:layout_width="fill_parent"
                 android:layout_marginLeft = "16dp"
                 android:layout_marginRight = "16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 android:padding="5dp"
                 android:imeOptions="actionNext"
                 android:drawablePadding="5dp"
-                android:hint="Nome"
+                android:hint="Ex: Maria"
                 android:maxLines="1"
                 android:inputType="textCapWords"/>
+
+            <TextView
+                style="@style/FormTextView"
+                android:text="Sobrenome"/>
 
             <EditText
                 android:id="@+id/editTextSobrenome"
@@ -57,13 +65,17 @@
                 android:layout_width="fill_parent"
                 android:layout_marginLeft = "16dp"
                 android:layout_marginRight = "16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 android:padding="5dp"
                 android:imeOptions="actionNext"
                 android:drawablePadding="5dp"
-                android:hint="Sobrenome"
+                android:hint="Ex: da Silva"
                 android:maxLines="1"
                 android:inputType="textCapWords"/>
+
+            <TextView
+                style="@style/FormTextView"
+                android:text="CEP"/>
 
             <EditText
                 android:id="@+id/editTextTelefone"
@@ -72,13 +84,17 @@
                 android:layout_width="fill_parent"
                 android:layout_marginLeft = "16dp"
                 android:layout_marginRight = "16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 android:padding="5dp"
                 android:imeOptions="actionNext"
                 android:drawablePadding="5dp"
                 android:hint="Telefone"
                 android:maxLines="1"
                 android:inputType="phone"/>
+
+            <TextView
+                style="@style/FormTextView"
+                android:text="Telefone"/>
 
             <EditText
                 android:id="@+id/editTextCPF"
@@ -87,12 +103,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft = "16dp"
                 android:layout_marginRight = "16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 android:drawablePadding="5dp"
                 android:padding="5dp"
                 android:imeOptions="actionNext"
-                android:hint="CPF"
+                android:hint="Ex: 11998335568"
                 android:inputType="number" />
+
+            <TextView
+                style="@style/FormTextView"
+                android:text="Email"/>
 
             <EditText
                 android:id="@+id/editTextEmail"
@@ -101,13 +121,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft = "16dp"
                 android:layout_marginRight = "16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 android:drawablePadding="5dp"
                 android:padding="5dp"
                 android:imeOptions="actionNext"
-                android:hint="Email"
+                android:hint="Ex: apprep@gmail.com"
                 android:maxLines="1"
-                android:inputType="text"/>
+                android:inputType="textEmailAddress	"/>
+
+            <TextView
+                style="@style/FormTextView"
+                android:text="Senha"/>
 
             <EditText
                 android:id="@+id/editTextSenha"
@@ -116,11 +140,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft = "16dp"
                 android:layout_marginRight = "16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="1dp"
                 android:drawablePadding="5dp"
                 android:padding="5dp"
                 android:imeOptions="actionNext"
-                android:hint="Senha"
                 android:maxLines="1"
                 android:inputType="text" />
 
@@ -138,6 +161,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

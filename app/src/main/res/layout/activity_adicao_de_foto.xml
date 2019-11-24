@@ -52,22 +52,22 @@
             android:id="@+id/buttonAdicionarCapa"
             android:backgroundTint="@color/colorAccent"/>
 
-        <TextView
-            style="@style/FormTextView"
-            android:text="Demais fotos"/>
+<!--        <TextView-->
+<!--            style="@style/FormTextView"-->
+<!--            android:text="Demais fotos"/>-->
 
-        <ImageView
-            style="@style/FormTextView"
-            android:id="@+id/demaisFotos"
-            android:src="@drawable/ic_image_24px"
-            android:layout_width="256dp"
-            android:layout_height="144dp"/>
+<!--        <ImageView-->
+<!--            style="@style/FormTextView"-->
+<!--            android:id="@+id/demaisFotos"-->
+<!--            android:src="@drawable/ic_image_24px"-->
+<!--            android:layout_width="256dp"-->
+<!--            android:layout_height="144dp"/>-->
 
-        <Button
-            style="@style/FormTextView"
-            android:text="Adicionar demais fotos"
-            android:id="@+id/buttonAdicionarFotos"
-            android:backgroundTint="@color/colorAccent"/>
+<!--        <Button-->
+<!--            style="@style/FormTextView"-->
+<!--            android:text="Adicionar demais fotos"-->
+<!--            android:id="@+id/buttonAdicionarFotos"-->
+<!--            android:backgroundTint="@color/colorAccent"/>-->
 
         <Button
             android:id="@+id/buttonProximoFoto"

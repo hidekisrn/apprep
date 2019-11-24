@@ -34,6 +34,10 @@
                 android:textColor="@color/black"/>
         </RelativeLayout>
 
+        <TextView
+            style="@style/FormTextView"
+            android:text="CEP"/>
+
         <EditText
             android:id="@+id/editTextCEP"
             android:background="@drawable/squarebox"
@@ -41,13 +45,17 @@
             android:layout_width="fill_parent"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="CEP"
+            android:hint="Ex: 13566290"
             android:maxLines="1"
             android:inputType="number"/>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Rua"/>
 
         <EditText
             android:id="@+id/editTextRua"
@@ -56,12 +64,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Rua"
+            android:hint="Ex: Rua Comendador Alves Filho"
             android:inputType="textCapWords" />
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Número"/>
 
         <EditText
             android:id="@+id/editTextNumeroResidencia"
@@ -70,13 +82,17 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Número da residência"
+            android:hint="Ex: 133"
             android:maxLines="1"
             android:inputType="number"/>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Bairro"/>
 
         <EditText
             android:id="@+id/editTextBairro"
@@ -85,23 +101,24 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:drawablePadding="5dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
-            android:hint="Bairro"
+            android:hint="Ex: Bairro Vila Prado"
             android:inputType="textCapWords" />
 
         <Button
             android:id="@+id/buttonProximoEndereco"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop = "24dp"
-            android:layout_marginLeft = "110dp"
-            android:layout_marginRight = "110dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="110dp"
+            android:textSize="14sp"
+            android:backgroundTint="@color/colorAccent"
             android:gravity="center"
-            android:text="Próximo"
-            android:backgroundTint="@color/colorAccent"/>
+            android:text="Próximo" />
 
 
     </LinearLayout>

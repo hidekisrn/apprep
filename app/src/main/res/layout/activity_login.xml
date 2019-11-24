@@ -38,19 +38,27 @@
                 android:textColor="@color/black"/>
         </RelativeLayout>
 
+        <TextView
+            style="@style/FormTextView"
+            android:text="Login"/>
+
         <EditText
             android:id="@+id/editTextLogin"
             android:background="@drawable/squarebox"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_width="fill_parent"
-            android:layout_marginLeft = "16dp"
-            android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="1dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
             android:hint="E-mail"/>
+
+        <TextView
+            style="@style/FormTextView"
+            android:text="Senha"/>
 
         <EditText
             android:id="@+id/editTextSenha"
@@ -60,11 +68,10 @@
             android:layout_width="fill_parent"
             android:layout_marginLeft = "16dp"
             android:layout_marginRight = "16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="1dp"
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="Senha"
             android:inputType="textPassword"/>
 
         <RelativeLayout
