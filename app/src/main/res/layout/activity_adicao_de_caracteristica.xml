@@ -48,7 +48,7 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="Ex:República Etanois"
+            android:hint="Ex: República Etanois"
             android:inputType="textCapWords" />
 
         <TextView
@@ -166,7 +166,7 @@
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
             android:inputType="numberDecimal"
-            android:hint="49.90" />
+            android:hint="Ex: 49.90" />
 
         <TextView
             style="@style/FormTextView"
@@ -184,7 +184,7 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="Descreva a sua acomodação"
+            android:hint="Ex: Lugar bom, com espaço de sobra..."
             android:inputType="textCapWords" />
 
         <Button

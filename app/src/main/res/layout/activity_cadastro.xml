@@ -75,7 +75,7 @@
 
             <TextView
                 style="@style/FormTextView"
-                android:text="CEP"/>
+                android:text="Telefone"/>
 
             <EditText
                 android:id="@+id/editTextTelefone"
@@ -88,13 +88,13 @@
                 android:padding="5dp"
                 android:imeOptions="actionNext"
                 android:drawablePadding="5dp"
-                android:hint="Telefone"
+                android:hint="Ex: 11998335568"
                 android:maxLines="1"
                 android:inputType="phone"/>
 
             <TextView
                 style="@style/FormTextView"
-                android:text="Telefone"/>
+                android:text="CPF"/>
 
             <EditText
                 android:id="@+id/editTextCPF"
@@ -107,7 +107,7 @@
                 android:drawablePadding="5dp"
                 android:padding="5dp"
                 android:imeOptions="actionNext"
-                android:hint="Ex: 11998335568"
+                android:hint="Ex: 36589425684"
                 android:inputType="number" />
 
             <TextView
@@ -127,7 +127,7 @@
                 android:imeOptions="actionNext"
                 android:hint="Ex: apprep@gmail.com"
                 android:maxLines="1"
-                android:inputType="textEmailAddress	"/>
+                android:inputType="textEmailAddress"/>
 
             <TextView
                 style="@style/FormTextView"

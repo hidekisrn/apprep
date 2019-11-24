@@ -54,7 +54,8 @@
             android:padding="5dp"
             android:imeOptions="actionNext"
             android:drawablePadding="5dp"
-            android:hint="E-mail"/>
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"/>
 
         <TextView
             style="@style/FormTextView"
