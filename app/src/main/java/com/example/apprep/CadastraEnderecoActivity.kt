@@ -9,11 +9,12 @@ import kotlinx.android.synthetic.main.activity_adicao_de_endereco.*
 class CadastraEnderecoActivity : AppCompatActivity() {
 
     var republica: Republica? = null
+    lateinit var usuario: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_endereco)
-        val usuario = intent.getSerializableExtra(USUARIO) as Usuario
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
         // caso o usuário volte para o passo 1 ele vai receber o usuário com dados preenchidos
         republica = intent.getSerializableExtra(REPUBLICA) as Republica?
@@ -71,6 +72,9 @@ class CadastraEnderecoActivity : AppCompatActivity() {
         // no passo 1 é só fechar que já volta pra lista.
         // TODO: colocar uma pergunta para confirmar se o usuário deseja cancelar o cadastro
         buttonVoltarEndereco.setOnClickListener {
+            val intent = Intent(this, PerfilActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
+            startActivity(intent)
             finish()
         }
     }
@@ -79,6 +83,9 @@ class CadastraEnderecoActivity : AppCompatActivity() {
     // TODO: colocar uma pergunta pra confirmar se o usuário deseja cancelar o cadastro
     override fun onBackPressed() {
         super.onBackPressed()
+        val intent = Intent(this, PerfilActivity::class.java)
+        intent.putExtra(USUARIO, usuario)
+        startActivity(intent)
         finish()
     }
 }

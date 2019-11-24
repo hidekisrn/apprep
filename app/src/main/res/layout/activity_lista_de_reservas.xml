@@ -9,38 +9,22 @@
     <androidx.appcompat.widget.Toolbar
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        />
-  
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft = "16dp"
-        android:layout_marginRight = "16dp"
-        android:layout_marginTop = "8dp">
-        <Button
-            android:id="@+id/reslistaDeRepublicas"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/squarebox"
-            android:text="Lista de Republicas" />
-        <Button
-            android:id="@+id/resminhasReservas"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:background="@drawable/squarebox"
-            android:text="Minhas Reservas" />
-        <Button
-            android:id="@+id/resmeuPerfil"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="275dp"
-            android:background="@drawable/squarebox"
-            android:text="Meu Perfil" />
-    </RelativeLayout>
+        android:background="@color/colorPrimary">
 
-<!--    <Button-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Lista de Reservas"
+            android:textSize="20sp"
+            android:layout_marginLeft="24sp"
+            android:textColor="@color/black"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+    <!--    <Button-->
 <!--        android:id="@+id/adicionarReservas"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
@@ -54,6 +38,34 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         tools:listitem="@layout/reserva_item_lista"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft = "16sp"
+        android:layout_marginRight = "16sp"
+        android:layout_marginTop = "8sp">
+        <Button
+            android:id="@+id/reslistaDeRepublicas"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squarebox"
+            android:text="Lista de Republicas" />
+        <Button
+            android:id="@+id/resminhasReservas"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140sp"
+            android:background="@drawable/squarebox"
+            android:text="Minhas Reservas" />
+        <Button
+            android:id="@+id/resmeuPerfil"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="275sp"
+            android:background="@drawable/squarebox"
+            android:text="Meu Perfil" />
+    </RelativeLayout>
 
 
 </LinearLayout>

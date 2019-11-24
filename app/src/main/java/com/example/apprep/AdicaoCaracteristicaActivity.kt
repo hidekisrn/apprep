@@ -13,12 +13,14 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
     var counterCarro = 0
 
     lateinit var republica: Republica
+    lateinit var usuario: Usuario
+
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicao_de_caracteristica)
-        val usuario = intent.getSerializableExtra(USUARIO) as Usuario
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
         //TODO: preencher campos com as informações que constam no objeto, por exemplo:
@@ -94,7 +96,7 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
             pegaNovosValores()
             val intent = Intent(this, CadastraEnderecoActivity::class.java)
             intent.putExtra(REPUBLICA, republica)
-
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
@@ -105,6 +107,7 @@ class AdicaoCaracteristicaActivity : AppCompatActivity() {
         pegaNovosValores()
         val intent = Intent(this, CadastraEnderecoActivity::class.java)
         intent.putExtra(REPUBLICA, republica)
+        intent.putExtra(USUARIO, usuario)
         startActivity(intent)
         finish()
     }

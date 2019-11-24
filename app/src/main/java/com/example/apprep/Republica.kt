@@ -17,4 +17,5 @@ data class Republica(
     var avaliacaoMedia: Float = 0F,
     var avaliacaoSoma: Float = 0F,
     var countAvaliacao: Int = 0,
-    var usuario: Int = 0): Serializable
+    var usuario: Int = 0,
+    var reserva: Int? = null): Serializable

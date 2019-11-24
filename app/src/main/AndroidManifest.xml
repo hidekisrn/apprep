@@ -66,6 +66,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ListaRepublicasActivity"></activity>
         <activity android:name=".DetalhesRepublica" />
+        <activity android:name=".DetalhesRepublica2" />
         <activity android:name=".ReservaDeVagaActivity" />
         <activity android:name=".ListaReservasActivity" />
         <activity android:name=".AvaliacaoActivity" />

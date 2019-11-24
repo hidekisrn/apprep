@@ -18,4 +18,5 @@ data class Reserva (
     var banheiros_reserva: String? = null,
     var preco_reserva: String? = null,
     var descricao_reserva: String? = null,
-    var usuario: Int = -1): Serializable
+    var usuario: Int = -1,
+    var republica: String? = null): Serializable

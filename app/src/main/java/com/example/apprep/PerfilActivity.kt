@@ -3,6 +3,7 @@ package com.example.apprep
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_lista_de_republicas.*
 import kotlinx.android.synthetic.main.activity_perfil.*
 
@@ -16,12 +17,16 @@ class PerfilActivity : AppCompatActivity() {
       
         plistaDeRepublicas.setOnClickListener {
             val intent = Intent(this, ListaRepublicasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
+            finish()
         }
 
         pminhasReservas.setOnClickListener {
             val intent = Intent(this, ListaReservasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
+            finish()
         }
 
         adicionarRepublica.setOnClickListener {
@@ -30,5 +35,12 @@ class PerfilActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, login::class.java)
+        startActivity(intent)
+        finish()
     }
 }

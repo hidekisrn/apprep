@@ -26,12 +26,14 @@ class ListaRepublicasActivity : AppCompatActivity() {
 
         repminhasReservas.setOnClickListener {
             val intent = Intent(this, ListaReservasActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
 
         repmeuPerfil.setOnClickListener {
             val intent = Intent(this, PerfilActivity::class.java)
+            intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
         }
@@ -49,6 +51,7 @@ class ListaRepublicasActivity : AppCompatActivity() {
             detalhesRepublica.putExtra(REPUBLICA, it)
             detalhesRepublica.putExtra(USUARIO, usuario)
             this.startActivity(detalhesRepublica)
+            this.finish()
 //            val usuario: Usuario
 //            val usuarios: MutableList<Usuario> = Paper.book().read(LISTA_USUARIOS) ?: mutableListOf()
 //            usuario = usuarios[it.usuario]
@@ -56,5 +59,12 @@ class ListaRepublicasActivity : AppCompatActivity() {
 
         rvRepublicas.adapter = adapter
         rvRepublicas.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, login::class.java)
+        startActivity(intent)
+        finish()
     }
 }

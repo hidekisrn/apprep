@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_reserva_vaga.*
+import java.util.*
 
 class ReservaDeVagaActivity : AppCompatActivity() {
 
     lateinit var republica: Republica
+    lateinit var usuario: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +18,7 @@ class ReservaDeVagaActivity : AppCompatActivity() {
 
         republica = intent.getSerializableExtra(REPUBLICA) as Republica
 
-        val usuario: Usuario = intent.getSerializableExtra(USUARIO) as Usuario
+        usuario = intent.getSerializableExtra(USUARIO) as Usuario
 
 
         buttonReservar.setOnClickListener {
@@ -49,10 +51,13 @@ class ReservaDeVagaActivity : AppCompatActivity() {
                 republica.num_residencia, republica.nome, republica.foto, republica.vagas, republica.vagasCarro, republica.banheiros,
                 republica.preco, republica.descricao)
 
+            reserva.republica = republica.nome
 
+            //criar uma lista de reservas pra cada usuario
             val reservas: MutableList<Reserva> = Paper.book().read(usuario.cpf) ?: mutableListOf()
             reservas.add(reserva)
             Paper.book().write(usuario.cpf, reservas)
+
             val intent = Intent(this, ListaReservasActivity::class.java)
             intent.putExtra(USUARIO, usuario)
             intent.putExtra(REPUBLICA, republica)
@@ -72,6 +77,7 @@ class ReservaDeVagaActivity : AppCompatActivity() {
         super.onBackPressed()
         val intent = Intent(this, DetalhesRepublica::class.java)
         intent.putExtra(REPUBLICA, republica)
+        intent.putExtra(USUARIO, usuario)
         startActivity(intent)
         finish()
     }

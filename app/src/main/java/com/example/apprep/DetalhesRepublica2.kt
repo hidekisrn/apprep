@@ -6,33 +6,26 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_detalhes_republica.*
+import kotlinx.android.synthetic.main.activity_detalhes_republica2.*
 
-class DetalhesRepublica : AppCompatActivity() {
+class DetalhesRepublica2 : AppCompatActivity() {
 
-    lateinit var republica: Republica
+    lateinit var reserva: Reserva
     lateinit var usuario: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detalhes_republica)
+        setContentView(R.layout.activity_detalhes_republica2)
 
 
-        val reserva: Reserva? = intent.getSerializableExtra(RESERVA) as Reserva?
-        val republica: Republica? = intent.getSerializableExtra(REPUBLICA) as Republica?
+        reserva = intent.getSerializableExtra(RESERVA) as Reserva
+//        val republica: Republica? = intent.getSerializableExtra(REPUBLICA) as Republica?
         usuario = intent.getSerializableExtra(USUARIO) as Usuario
-        if (reserva != null) carregaDadosReserva(reserva)
-        if (republica != null) carregaDados(republica)
+        carregaDadosReserva(reserva)
+//        if (republica != null) carregaDados(republica)
 
-        buttonReservarRep.setOnClickListener{
-            val intent = Intent(this, ReservaDeVagaActivity::class.java)
-            intent.putExtra(REPUBLICA, republica)
-            intent.putExtra(USUARIO, usuario)
-            startActivity(intent)
-            finish()
-        }
-
-        buttonVoltarDetalhes.setOnClickListener {
-            val intent = Intent(this, ListaRepublicasActivity::class.java)
+        buttonVoltarDetalhes2.setOnClickListener {
+            val intent = Intent(this, ListaReservasActivity::class.java)
             intent.putExtra(USUARIO, usuario)
             startActivity(intent)
             finish()
@@ -57,14 +50,14 @@ class DetalhesRepublica : AppCompatActivity() {
             "Banheiros: " + republica.banheiros
         val detalhes: String? =
             "Detalhes: \n" + republica.descricao
-        dtNomeRep.text = republica.nome
-        dtEndereco.text = endereco
-        dtBanheiros.text = banheiro
-        dtPreco.text = preco
-        dtVagas.text = vagas
-        dtVagasCarro.text = vagasCarro
-        dtDetalhes.text = detalhes
-        dtrating_bar.rating = republica.avaliacaoMedia
+        dtNomeRep2.text = republica.nome
+        dtEndereco2.text = endereco
+        dtBanheiros2.text = banheiro
+        dtPreco2.text = preco
+        dtVagas2.text = vagas
+        dtVagasCarro2.text = vagasCarro
+        dtDetalhes2.text = detalhes
+        dtrating_bar2.rating = republica.avaliacaoMedia
         if(republica.foto != null)
             imgFotoCapa.setImageURI(Uri.parse(republica.foto))
     }
@@ -82,20 +75,20 @@ class DetalhesRepublica : AppCompatActivity() {
             "Banheiros: " + reserva.banheiros_reserva
         val detalhes: String? =
             "Detalhes: \n" + reserva.descricao_reserva
-        dtNomeRep.text = reserva.nome_reserva
-        dtEndereco.text = endereco
-        dtBanheiros.text = banheiro
-        dtPreco.text = preco
-        dtVagas.text = vagas
-        dtVagasCarro.text = vagasCarro
-        dtDetalhes.text = detalhes
+        dtNomeRep2.text = reserva.nome_reserva
+        dtEndereco2.text = endereco
+        dtBanheiros2.text = banheiro
+        dtPreco2.text = preco
+        dtVagas2.text = vagas
+        dtVagasCarro2.text = vagasCarro
+        dtDetalhes2.text = detalhes
         if(reserva.foto_reserva != null)
             imgFotoCapa.setImageURI(Uri.parse(reserva.foto_reserva))
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-        val intent = Intent(this, ListaRepublicasActivity::class.java)
+        val intent = Intent(this, ListaReservasActivity::class.java)
         intent.putExtra(USUARIO, usuario)
         startActivity(intent)
         finish()

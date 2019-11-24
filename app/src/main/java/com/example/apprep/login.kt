@@ -19,11 +19,15 @@ import com.google.android.gms.common.api.ApiException
 //import androidx.test.orchestrator.junit.BundleJUnitUtils.getResult
 import com.google.android.gms.tasks.Task
 import io.paperdb.Paper
+import kotlin.system.exitProcess
 
 
 //const val RC_SIGN_IN = 123
 
 class login : AppCompatActivity() {
+
+    var backPressedTime: Long = 0
+    lateinit var backToast: Toast
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -133,4 +137,16 @@ class login : AppCompatActivity() {
 //
 //        }
 //    }
+    override fun onBackPressed() {
+
+    if (backPressedTime + 2000 > System.currentTimeMillis()){
+        backToast.cancel()
+        super.onBackPressed()
+        return
+    } else{
+        backToast = Toast.makeText(this, "Pressione voltar novamente para sair", Toast.LENGTH_SHORT)
+        backToast.show()
+    }
+        backPressedTime = System.currentTimeMillis()
+    }
 }
